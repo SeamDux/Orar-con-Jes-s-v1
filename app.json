@@ -20,14 +20,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.orarconjesus.app"
     },
     "android": {
       "package": "com.orarconjesus.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "jsEngine": "hermes",
+      "enableProguardInReleaseBuilds": true,
+      "enableShrinkResources": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -35,6 +39,13 @@
     "scheme": "orarconjesus",
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "experiments": {
+      "tsconfigPaths": true
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/bf6414f8-8793-416a-a967-8141f890fb15"
+    }
   }
 } 
