@@ -26,6 +26,7 @@
   },
   "cli": {
     "version": ">= 5.9.1",
-    "requireCommit": true
+    "requireCommit": true,
+    "appVersionSource": "remote"
   }
 }
