@@ -1,0 +1,31 @@
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },
+      "channel": "preview",
+      "env": {
+        "APP_VARIANT": "preview"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease",
+        "autoIncrement": true,
+        "env": {
+          "ENABLE_HERMES": "1"
+        }
+      },
+      "channel": "production",
+      "env": {
+        "APP_VARIANT": "production"
+      }
+    }
+  },
+  "cli": {
+    "version": ">= 5.9.1",
+    "requireCommit": true
+  }
+}
