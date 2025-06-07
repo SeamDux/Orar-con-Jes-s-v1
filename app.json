@@ -1,18 +1,14 @@
 {
   "expo": {
-    "extra": {
-      "eas": {
-        "projectId": "bf6414f8-8793-416a-a967-8141f890fb15"
-      }
-    },
     "name": "Orar con Jesús",
-    "slug": "orarconjesus",
+    "slug": "orar-con-jesus",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "userInterfaceStyle": "light",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,28 +20,23 @@
       "bundleIdentifier": "com.orarconjesus.app"
     },
     "android": {
-      "package": "com.orarconjesus.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "jsEngine": "hermes",
-      "enableProguardInReleaseBuilds": true,
-      "enableShrinkResources": true
+      "package": "com.orarconjesus.app"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
     },
-    "scheme": "orarconjesus",
     "plugins": [
       "expo-router"
     ],
     "experiments": {
+      "typedRoutes": true,
       "tsconfigPaths": true
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/bf6414f8-8793-416a-a967-8141f890fb15"
     }
   }
 } 
