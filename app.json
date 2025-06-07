@@ -37,6 +37,13 @@
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true
+    },
+    "updates": {
+      "url": "https://u.expo.dev/bf6414f8-8793-416a-a967-8141f890fb15",
+      "enabled": true
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 } 

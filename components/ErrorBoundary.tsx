@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Colors from '../constants/Colors';
 
 interface Props {
   children: React.ReactNode;
@@ -17,24 +16,25 @@ export class ErrorBoundary extends React.Component<Props, State> {
     this.state = { hasError: false, error: null };
   }
 
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error: Error) {
     return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.warn('Error en la aplicación:', error, errorInfo);
+    console.error('Error en la aplicación:', error);
+    console.error('Error Info:', errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
       return (
         <View style={styles.container}>
-          <Text style={styles.title}>Lo sentimos, ha ocurrido un error</Text>
+          <Text style={styles.title}>Lo sentimos, algo salió mal</Text>
           <Text style={styles.message}>
-            {this.state.error?.message || 'Error desconocido'}
+            Por favor, intenta reiniciar la aplicación. Si el problema persiste, contacta con soporte.
           </Text>
-          <Text style={styles.hint}>
-            Por favor, intenta cerrar y volver a abrir la aplicación
+          <Text style={styles.errorDetails}>
+            {this.state.error?.toString()}
           </Text>
         </View>
       );
@@ -50,24 +50,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: Colors.background,
+    backgroundColor: '#fff',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: Colors.primary,
-    textAlign: 'center',
+    color: '#E53935',
   },
   message: {
     fontSize: 16,
-    color: 'gray',
-    marginBottom: 20,
     textAlign: 'center',
+    marginBottom: 20,
+    color: '#333',
   },
-  hint: {
+  errorDetails: {
     fontSize: 14,
-    color: Colors.text,
+    color: '#666',
     textAlign: 'center',
   },
 }); 

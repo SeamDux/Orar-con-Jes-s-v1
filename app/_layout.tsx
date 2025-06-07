@@ -3,15 +3,15 @@ import { useFonts } from 'expo-font';
 import { Stack, SplashScreen } from 'expo-router';
 import { useEffect } from 'react';
 import { Platform, View } from 'react-native';
-import Colors from '../constants/Colors';
-import { ErrorBoundary } from '../components/ErrorBoundary';
+import Colors from '@/constants/Colors';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.

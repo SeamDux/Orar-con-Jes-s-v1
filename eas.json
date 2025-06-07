@@ -8,28 +8,27 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "android": {
-        "buildType": "apk",
-        "gradleCommand": ":app:assembleDebug"
-      }
+      "channel": "development"
     },
     "preview": {
       "distribution": "internal",
       "android": {
         "buildType": "apk"
-      }
+      },
+      "channel": "preview"
     },
     "production": {
       "autoIncrement": true,
       "android": {
-        "buildType": "apk",
-        "gradleCommand": ":app:assembleRelease",
+        "buildType": "app-bundle",
+        "gradleCommand": ":app:bundleRelease",
         "env": {
-          "ENABLE_HERMES": "1"
+          "ANDROID_NDK_HOME": "C:\\Users\\Public\\Android\\ndk\\25.2.9519653"
         }
-      }
-    }
       },
+      "channel": "production"
+    }
+  },
   "submit": {
     "production": {}
   }
