@@ -20,11 +20,8 @@
     "production": {
       "autoIncrement": true,
       "android": {
-        "buildType": "app-bundle",
-        "gradleCommand": ":app:bundleRelease",
-        "env": {
-          "ANDROID_NDK_HOME": "C:\\Users\\Public\\Android\\ndk\\25.2.9519653"
-        }
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
       },
       "channel": "production"
     }
