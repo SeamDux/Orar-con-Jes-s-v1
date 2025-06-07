@@ -1,263 +1,103 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack, SplashScreen } from 'expo-router';
-import { useEffect } from 'react';
-import { Platform, View } from 'react-native';
-import Colors from '@/constants/Colors';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import 'react-native-gesture-handler';
+import { Stack } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
+import { useEffect, useState } from 'react';
+import 'react-native-reanimated';
+import { useColorScheme, SafeAreaView, View, Text } from 'react-native';
+import Colors from '../constants/Colors';
+import * as Font from 'expo-font';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
+// Prevenir que la pantalla de inicio se oculte automáticamente
 SplashScreen.preventAutoHideAsync();
 
+interface ErrorFallbackProps {
+  error: Error | null;
+}
+
+// Error Boundary Component
+function ErrorFallback({ error }: ErrorFallbackProps) {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+      <Text style={{ fontSize: 18, marginBottom: 10 }}>Lo sentimos, ha ocurrido un error.</Text>
+      <Text style={{ color: 'gray' }}>{error?.message || 'Error desconocido'}</Text>
+    </View>
+  );
+}
+
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
-    SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
+  const colorScheme = useColorScheme();
+  const [error, setError] = useState<Error | null>(null);
+  const [loaded] = useFonts({
+    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
-    if (error) throw error;
-  }, [error]);
+    async function prepare() {
+      try {
+        // Asegurar que las fuentes estén cargadas
+        await Font.loadAsync({
+          SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+        });
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
+        if (loaded) {
+          // Pequeño retraso para asegurar que todo esté listo
+          await new Promise(resolve => setTimeout(resolve, 500));
+          await SplashScreen.hideAsync();
+        }
+      } catch (e) {
+        console.warn('Error durante la inicialización:', e);
+        setError(e instanceof Error ? e : new Error('Error desconocido'));
+      }
     }
+
+    prepare();
   }, [loaded]);
 
+  // Mostrar pantalla de error si hay algún problema
+  if (error) {
+    return <ErrorFallback error={error} />;
+  }
+
+  // Mantener la pantalla de splash mientras se carga
   if (!loaded) {
     return null;
   }
 
   return (
-    <ErrorBoundary>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <SafeAreaProvider>
-          <ThemeProvider value={DefaultTheme}>
-            <Stack
-              screenOptions={{
-                headerStyle: {
-                  backgroundColor: Colors.primary,
-                },
-                headerTintColor: Colors.white,
-                headerTitleStyle: {
-                  fontWeight: '600',
-                  fontSize: 18,
-                },
-                headerShadowVisible: false,
-                contentStyle: {
-                  backgroundColor: Colors.background,
-                },
-                animation: Platform.select({
-                  ios: 'default',
-                  android: 'fade'
-                }),
-                animationDuration: 200,
-              }}
-            >
-              <Stack.Screen 
-                name="index" 
-                options={{
-                  title: 'Orar con Jesús',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="adoracion/index"
-                options={{
-                  title: 'Adoración',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="liturgia/index"
-                options={{
-                  title: 'Liturgia',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="calendario/index"
-                options={{
-                  title: 'Calendario',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="santoral/index"
-                options={{
-                  title: 'Santoral',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="virtudes/index"
-                options={{
-                  title: 'Virtudes',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="resumen-doctrina"
-                options={{
-                  title: 'Resumen de Doctrina',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="sacramentos/index"
-                options={{
-                  title: 'Sacramentos',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="vida-cristiana/index"
-                options={{
-                  title: 'Vida Cristiana',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="oraciones"
-                options={{
-                  title: 'Oraciones',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="oficio-del-dia"
-                options={{
-                  title: 'Oficio del Día',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="oraciones-noche"
-                options={{
-                  title: 'Oraciones de la Noche',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="santa-misa/index"
-                options={{
-                  title: 'Santa Misa',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="noticias/index"
-                options={{
-                  title: 'Noticias',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="confesion/index"
-                options={{
-                  title: 'Confesión',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="trinidad"
-                options={{
-                  title: 'Trinidad',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="devociones-jesus"
-                options={{
-                  title: 'Devociones a Jesús',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="devociones-espiritu"
-                options={{
-                  title: 'Devociones al Espíritu Santo',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="devociones-maria"
-                options={{
-                  title: 'Devociones a María',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="devociones-jose"
-                options={{
-                  title: 'Devociones a San José',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="devociones-moribundo"
-                options={{
-                  title: 'Devociones para Moribundos',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="oraciones-difuntos"
-                options={{
-                  title: 'Oraciones por Difuntos',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="novenas/index"
-                options={{
-                  title: 'Novenas',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="bendiciones/index"
-                options={{
-                  title: 'Bendiciones',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="oraciones-diversas/index"
-                options={{
-                  title: 'Oraciones Diversas',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="jubileo"
-                options={{
-                  title: 'Jubileo 2025',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="cantoral/index"
-                options={{
-                  title: 'Cantoral',
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen 
-                name="buscar"
-                options={{
-                  title: 'Buscar',
-                  headerShown: true,
-                }}
-              />
-            </Stack>
-          </ThemeProvider>
-        </SafeAreaProvider>
-      </GestureHandlerRootView>
-    </ErrorBoundary>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.background }}>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 200,
+          }}
+        >
+          <Stack.Screen 
+            name="(app)" 
+            options={{
+              animation: 'fade',
+            }}
+          />
+          <Stack.Screen 
+            name="+not-found" 
+            options={{ 
+              title: 'Página no encontrada',
+              headerShown: true,
+              headerStyle: { 
+                backgroundColor: Colors.primary,
+              },
+              headerTintColor: Colors.white,
+              contentStyle: {
+                backgroundColor: Colors.background,
+              },
+            }} 
+          />
+        </Stack>
+      </ThemeProvider>
+    </SafeAreaView>
   );
 }
