@@ -43,7 +43,7 @@ export default function DevocionesEspirituScreen() {
             <TouchableOpacity 
               key={devocion.id}
               style={styles.devocionItem}
-              onPress={() => router.push(`/devociones-espiritu/${devocion.id}`)}
+              onPress={() => router.push(`/(app)/devociones-espiritu/${devocion.id}`)}
             >
               <Text style={styles.devocionItemTitulo}>{devocion.titulo}</Text>
             </TouchableOpacity>

@@ -29,9 +29,9 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "jsEngine": "hermes",
-      "enableProguardInReleaseBuilds": true,
-      "enableShrinkResources": true
+      "jsEngine": "jsc",
+      "enableProguardInReleaseBuilds": false,
+      "enableShrinkResources": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -39,6 +39,10 @@
     "scheme": "orarconjesus",
     "plugins": [
       "expo-router"
+    ],
+    "permissions":[
+      "android.permission.INTERNET",
+      "android.permission.ACCESS_NETWORK_STATE"
     ],
     "experiments": {
       "tsconfigPaths": true
