@@ -16,7 +16,7 @@ module.exports = {
     slug: 'orarconjesus',
     version: '1.0.0',
     orientation: 'portrait',
-    icon: './assets/images/icon.png',
+    icon: './assets/images/android-chrome-512x512.png',
     userInterfaceStyle: 'light',
     splash: {
       image: './assets/images/splash-icon.png',
@@ -44,7 +44,7 @@ module.exports = {
       jsEngine: "hermes"
     },
     web: {
-      favicon: './assets/images/favicon.png',
+      favicon: './assets/images/favicon-32x32.png',
       bundler: 'metro'
     },
     plugins: [
