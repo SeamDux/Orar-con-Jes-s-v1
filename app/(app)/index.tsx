@@ -68,7 +68,7 @@ export default function HomePage() {
           <Link href="/(app)/oficio-del-dia" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="book-open-variant" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Oficio del Día</Text>
+              <Text style={styles.menuText}>Liturgia de las Horas del día en Audio</Text>
             </TouchableOpacity>
           </Link>
 

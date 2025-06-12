@@ -181,8 +181,7 @@ export default function OficioDelDiaScreen() {
                   
                   {oficioData.audioLinks.map((audioLink, index) => {
                     // Extraer el nombre del audio desde la URL
-                    console.log('URL del audio:', audioLink);
-                    const audioName = audioLink.split('/').pop()?.split('.')[0] || `Audio ${index + 1}`;
+                    const audioName = audioLink.split('/').pop()?.replace(/\.(mp3|wav|ogg)$/i, '') || `Audio ${index + 1}`;
                     console.log('Nombre extraído del audio:', audioName);
                     
                     // Mapeo personalizado de nombres de archivos a títulos más descriptivos
@@ -210,15 +209,23 @@ export default function OficioDelDiaScreen() {
                       if (decodedFileName.includes('Invitatorio')) return 'Invitatorio';
                       if (decodedFileName.includes('Oficio-de-Lec') || decodedFileName.includes('Oficio de Lec')) return 'Oficio de Lectura';
                       if (decodedFileName.includes('Primera-Lec') || decodedFileName.includes('Primera Lec')) return 'Primera Lectura';
+                      if (decodedFileName.includes('PRIMERA-LECTURA') || decodedFileName.includes('Primera Lec')) return 'Primera Lectura';
                       if (decodedFileName.includes('Segunda-Lec') || decodedFileName.includes('Segunda Lec')) return 'Segunda Lectura';
+                      if (decodedFileName.includes('SEGUNDA-LECTURA') || decodedFileName.includes('Segunda Lec')) return 'Segunda Lectura';
                       if (decodedFileName.includes('Laudes')) return 'Laudes (Oración de la mañana)';
+                      if (decodedFileName.includes('LAUDES')) return 'Laudes (Oración de la mañana)';
                       if (decodedFileName.includes('Tercia')) return 'Hora Tercia';
                       if (decodedFileName.includes('Sexta')) return 'Hora Sexta';
                       if (decodedFileName.includes('Nona')) return 'Hora Nona';
                       if (decodedFileName.includes('Vísperas') || decodedFileName.includes('Visperas')) return 'Vísperas (Oración de la tarde)';
+                      if (decodedFileName.includes('VISPRAS') || decodedFileName.includes('Visperas')) return 'Vísperas (Oración de la tarde)';
                       if (decodedFileName.includes('Completas')) return 'Completas (Oración de la noche)';
                       if (decodedFileName.includes('EVANGELIO') || decodedFileName.includes('Evangelio')) return 'Evangelio del día';
+                      if (decodedFileName.includes('EvANGELIO') || decodedFileName.includes('Evangelio')) return 'Evangelio del día';
                       if (decodedFileName.includes('Jueves')) return 'Completas (Oración de la noche)';
+                      if (decodedFileName.includes('5.1-TERCIA')) return 'Hora Tercia';
+                      if (decodedFileName.includes('5.2-SEXTA')) return 'Hora Sexta';
+                      if (decodedFileName.includes('5.3-NONA')) return 'Hora Nona';
                       
                       // Caso especial para archivos que solo tienen números (como "5")
                       if (/^\d+$/.test(decodedFileName) || decodedFileName.length < 3) {

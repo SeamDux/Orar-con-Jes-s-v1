@@ -402,7 +402,7 @@ const searchData: SearchItem[] = [
     keywords: ['laudes', 'completas', 'visperas', 'oracion de mañana', 'oracion de la noche', 'oracion de la tarde']
   },
   {
-    title: 'Oficio del Día',
+    title: 'Liturgia de las Horas del día en Audio',
     route: '/(app)/oficio-del-dia',
     category: 'Liturgia de las horas',
     keywords: ['laudes', 'completas', 'visperas', 'oracion de mañana', 'oracion de la noche', 'oracion de la tarde']

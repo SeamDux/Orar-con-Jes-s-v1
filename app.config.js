@@ -19,7 +19,7 @@ module.exports = {
     icon: './assets/images/android-chrome-512x512.png',
     userInterfaceStyle: 'light',
     splash: {
-      image: './assets/images/splash-icon.png',
+      image: './assets/images/app-store-1024pt@1x (1).png',
       resizeMode: 'contain',
       backgroundColor: '#ffffff'
     },
@@ -34,7 +34,7 @@ module.exports = {
       package: 'com.orarconjesus.app',
       versionCode: 1,
       adaptiveIcon: {
-        foregroundImage: './assets/images/adaptive-icon.png',
+        foregroundImage: './assets/images/app-store-1024pt@1x.png',
         backgroundColor: '#ffffff'
       },
       permissions: [],
