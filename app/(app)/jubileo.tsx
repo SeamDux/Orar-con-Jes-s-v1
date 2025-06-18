@@ -19,7 +19,10 @@ export default function JubileoScreen() {
       />
       <StatusBar style="light" />
       <ScrollView style={styles.scrollView}>
-        <BlurView intensity={80} style={styles.content}>
+        <BlurView 
+        intensity={100} 
+        tint="light"
+        style={[styles.content, { backgroundColor: 'rgba(255, 255, 255, 0.2)' }]}>
           <Text style={styles.title}>Oración del Jubileo de la Esperanza 2025</Text>
           
           <Text style={styles.prayer}>
@@ -62,6 +65,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 15,
     overflow: 'hidden',
+    backgroundColor: 'rgba(255, 255, 255, 0.4)', // Fondo más opaco
   },
   title: {
     fontSize: 24,
@@ -74,6 +78,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     textAlign: 'center',
-    color: '#444',
+    color: '#333',
+    textShadowColor: 'rgba(0, 0, 0, 0.2)',
+    textShadowOffset: { width: 0.5, height: 0.5 },
+    textShadowRadius: 1,
   },
 }); 

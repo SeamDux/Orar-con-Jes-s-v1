@@ -1,7 +1,8 @@
-import { Stack, useNavigation, usePathname } from 'expo-router';
+import { Stack, useNavigation, usePathname, router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { BackHandler, Platform, View, Text, LogBox } from 'react-native';
+import { BackHandler, Platform, View, Text, LogBox, TouchableOpacity } from 'react-native';
 import Colors from '../../constants/Colors';
+import { MaterialIcons } from '@expo/vector-icons';
 
 // Ignorar advertencias específicas si es necesario
 LogBox.ignoreLogs([
@@ -86,6 +87,24 @@ export default function AppLayout() {
           name="index" 
           options={{
             title: 'Orar con Jesús',
+            headerShown: true,
+            headerRight: () => (
+              <TouchableOpacity 
+                onPress={() => router.push('/(app)/acerca-de')}
+                style={{
+                  marginRight: 16,
+                  padding: 4,
+                }}
+              >
+                <MaterialIcons name="info-outline" size={24} color="white" />
+              </TouchableOpacity>
+            ),
+          }} 
+        />
+        <Stack.Screen 
+          name="acerca-de" 
+          options={{
+            title: 'Acerca de',
             headerShown: true,
           }} 
         />
