@@ -340,6 +340,110 @@ const searchData: SearchItem[] = [
     keywords: ['buena muerte', 'oracion', 'devocion']
   },
 
+  // Devociones a la Santisima Trinidad
+
+  {
+    title: 'Trisagio Angelico a la Santisima Trinidad',
+    route: '/trinidad/trisagio',
+    category: 'Devociones a la Santisima Trinidad',
+    keywords: ['Trisagio', 'trinidad', 'santisima']
+  },
+
+  {
+    title: 'Te Deum',
+    route: '/trinidad/tedeum',
+    category: 'Devociones a la Santisima Trinidad',
+    keywords: ['te deum', 'trinidad', 'santisima']
+  },
+
+  // Devociones al Espiritu Santo
+
+  {
+    title: 'Letanias al Espiritu Santo',
+    route: '/devociones-espiritu/letanias',
+    category: 'Devociones al Espiritu Santo',
+    keywords: ['espiritu', 'santo', 'letanias']
+  },
+
+  {
+    title: 'Ven, Espiritu Creador',
+    route: '/devociones-espiritu/ven-espiritu-creador',
+    category: 'Devociones al Espiritu Santo',
+    keywords: ['espiritu', 'santo', 'letanias']
+  },
+
+  {
+    title: 'Ven, Espiritu Santo Creador',
+    route: '/devociones-espiritu/ven-espiritu-santo-creador',
+    category: 'Devociones al Espiritu Santo',
+    keywords: ['espiritu', 'santo', 'letanias']
+  },
+
+  {
+    title: 'Ven, Espiritu Santo',
+    route: '/devociones-espiritu/ven-espiritu-santo',
+    category: 'Devociones al Espiritu Santo',
+    keywords: ['espiritu', 'santo', 'letanias']
+  },
+
+  // Devociones a Nuestro Señor Jesucristo
+
+  {
+    title: 'Coronilla de la Divina Misericordia',
+    route: '/devociones/coronilla-misericordia',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['coronilla', 'misericordia', 'Jesucristo']
+  },
+
+  {
+    title: 'Soneto a Cristo Crucificado',
+    route: '/devociones/soneto-cristo',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['soneto', 'misericordia', 'Jesucristo', 'pasion', 'semana santa']
+  },
+
+  {
+    title: 'Oracion de San Agustín',
+    route: '/devociones/oracion-agustin',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['san agustin', 'misericordia', 'Jesucristo', 'oracion']
+  },
+
+  {
+    title: 'Devoción del Primer Viernes de mes al Sagrado Corazón de Jesús',
+    route: '/devociones/primer-viernes',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['corazon', 'sagrado corazon', 'Jesucristo', 'viernes']
+  },
+
+  {
+    title: 'Consagracion al Sagrado Corazón de Jesús',
+    route: '/devociones/consagracion-sagrado',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['corazon', 'sagrado corazon', 'Jesucristo', 'viernes']
+  },
+
+  {
+    title: 'Consagracion de la Diocesis de San Bernardo al Sagrado Corazón de Jesús',
+    route: '/devociones/consagracion-diocesis',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['corazon', 'sagrado corazon', 'Jesucristo', 'viernes', 'san bernardo']
+  },
+
+  {
+    title: 'Letanias del Sagrado Corazón',
+    route: '/devociones/letanias-sagrado',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['corazon', 'sagrado corazon', 'Jesucristo', 'viernes']
+  },
+
+  {
+    title: 'Letanias del Santo Nombre de Jesús',
+    route: '/devociones/letanias-nombre',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['corazon', 'sagrado corazon', 'Jesucristo', 'viernes']
+  },
+
   // Sacramentos
   {
     title: 'Bautismo',
