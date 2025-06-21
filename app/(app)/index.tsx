@@ -9,6 +9,14 @@ export default function HomePage() {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
+
+          <Link href="/(app)/noticias" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="newspaper" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Noticias de la Diocesis</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/calendario" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="calendar-month" size={32} color={Colors.primary} />
@@ -83,14 +91,6 @@ export default function HomePage() {
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="bread-slice" size={32} color={Colors.primary} />
               <Text style={styles.menuText}>La Santa Misa</Text>
-            </TouchableOpacity>
-          </Link>
-
-
-          <Link href="/(app)/noticias" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="newspaper" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Noticias de la Diocesis</Text>
             </TouchableOpacity>
           </Link>
 
