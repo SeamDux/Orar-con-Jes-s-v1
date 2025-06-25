@@ -62,6 +62,13 @@ export default function DevocionesJesusScreen() {
 
           <TouchableOpacity 
             style={styles.devocionItem}
+            onPress={() => router.push('/devociones/mes-sagrado-corazon')}
+          >
+            <Text style={styles.devocionItemTitulo}>Mes del Sagrado Corazón de Jesús</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            style={styles.devocionItem}
             onPress={() => router.push('/devociones/letanias-sagrado')}
           >
             <Text style={styles.devocionItemTitulo}>Letanías del Sagrado Corazón</Text>
