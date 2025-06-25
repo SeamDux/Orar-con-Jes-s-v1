@@ -32,7 +32,7 @@ const searchData: SearchItem[] = [
     title: 'Preparación',
     route: '/santa-misa/preparacion',
     category: 'Liturgia',
-    keywords: ['preparacion', 'misa', 'oracion']
+    keywords: ['preparacion', 'antes de misa', 'oracion']
   },
   {
     title: 'Accion de gracias',
@@ -56,7 +56,7 @@ const searchData: SearchItem[] = [
     title: 'Liturgia Eucarística',
     route: '/santa-misa/liturgia-eucaristica',
     category: 'Liturgia',
-    keywords: ['eucaristia', 'ofrendas', 'consagracion', 'padre nuestro', 'comunion']
+    keywords: ['eucaristia', 'ofrendas', 'consagracion', 'padre nuestro', 'comunion', 'misa']
   },
   {
     title: 'Ritos de Despedida',
@@ -662,6 +662,92 @@ const searchData: SearchItem[] = [
     keywords: ['espiritu santo', 'trinidad', 'devociones', 'trisagio']
   },
   
+  // Devociones a María Santísima
+  {
+    title: 'Santo Rosario',
+    route: '/devociones-maria/santo-rosario',
+    category: 'Devociones a María Santísima',
+    keywords: ['rosario', 'maria', 'virgen', 'oracion', 'misterios', 'gozosos', 'dolorosos', 'gloriosos', 'luminosos']
+  },
+  {
+    title: 'Letanías a la Santísima Virgen',
+    route: '/devociones-maria/letanias',
+    category: 'Devociones a María Santísima',
+    keywords: ['letanias', 'lauretanas', 'maria', 'virgen', 'oracion']
+  },
+  {
+    title: 'Bajo Tu Protección',
+    route: '/devociones-maria/bajo-tu-proteccion',
+    category: 'Devociones a María Santísima',
+    keywords: ['proteccion', 'amparo', 'maria', 'virgen', 'oracion']
+  },
+  {
+    title: 'Salve Regina',
+    route: '/devociones-maria/salve-regina',
+    category: 'Devociones a María Santísima',
+    keywords: ['salve', 'regina', 'maria', 'virgen', 'oracion']
+  },
+  {
+    title: 'Estaba la Madre Dolorosa',
+    route: '/devociones-maria/madre-dolorosa',
+    category: 'Devociones a María Santísima',
+    keywords: ['dolorosa', 'madre', 'maria', 'virgen', 'oracion', 'dolores']
+  },
+  {
+    title: 'Fórmula para la Bendición e Imposición del Escapulario de la Virgen del Carmen',
+    route: '/devociones-maria/escapulario',
+    category: 'Devociones a María Santísima',
+    keywords: ['escapulario', 'carmen', 'virgen', 'maria', 'bendicion', 'imposicion']
+  },
+  {
+    title: 'Bendita Sea Tu Pureza',
+    route: '/devociones-maria/bendita-sea',
+    category: 'Devociones a María Santísima',
+    keywords: ['pureza', 'maria', 'virgen', 'oracion']
+  },
+  {
+    title: 'Acordaos (Oración de San Bernardo)',
+    route: '/devociones-maria/acordaos',
+    category: 'Devociones a María Santísima',
+    keywords: ['acordaos', 'san bernardo', 'maria', 'virgen', 'oracion']
+  },
+  {
+    title: 'Oración a la Virgen de Guadalupe',
+    route: '/devociones-maria/guadalupe',
+    category: 'Devociones a María Santísima',
+    keywords: ['guadalupe', 'mexico', 'maria', 'virgen', 'oracion']
+  },
+  {
+    title: 'Mes de María',
+    route: '/devociones-maria/mes-maria',
+    category: 'Devociones a María Santísima',
+    keywords: ['mes', 'maria', 'virgen', 'oracion', 'novena']
+  },
+  {
+    title: 'Lecturas Marianas para el Mes de María',
+    route: '/devociones-maria/lecturas-marianas',
+    category: 'Devociones a María Santísima',
+    keywords: ['lecturas', 'marianas', 'mes', 'maria', 'virgen', 'oracion']
+  },
+  {
+    title: 'Novena a la Inmaculada Concepción',
+    route: '/devociones-maria/novena-inmaculada',
+    category: 'Devociones a María Santísima',
+    keywords: ['novena', 'inmaculada', 'concepcion', 'maria', 'virgen', 'oracion']
+  },
+  {
+    title: 'Oración por Chile a la Virgen del Carmen',
+    route: '/devociones-maria/oracion-chile',
+    category: 'Devociones a María Santísima',
+    keywords: ['chile', 'carmen', 'maria', 'virgen', 'oracion', 'patrona']
+  },
+  {
+    title: 'Consagración de la Diócesis de San Bernardo a la Virgen del Carmen',
+    route: '/devociones-maria/consagracion-diocesis',
+    category: 'Devociones a María Santísima',
+    keywords: ['consagracion', 'diocesis', 'san bernardo', 'carmen', 'maria', 'virgen', 'oracion']
+  },
+
   // Otras bendiciones y oraciones
   {
     title: 'Para un enfermo',

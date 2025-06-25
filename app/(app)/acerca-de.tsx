@@ -24,7 +24,13 @@ export default function AcercaDeScreen() {
             <Text style={styles.subtitle}>Nuestra Misión</Text>
             <Text style={styles.text}>
               Orar con Jesús es una aplicación creada para fomentar la oración y el crecimiento espiritual 
-              a través de recursos católicos, reflexiones diarias y el seguimiento del calendario litúrgico.
+              a través de recursos católicos, reflexiones diarias y el seguimiento del calendario litúrgico.{'\n\n'}
+              Se basa en el libro del mismo nombre, que es una recopilación de las principales oraciones y devociones del cristiano:
+              Oraciones de siempre,
+              La Santa Misa,
+              Liturgia de las Horas y el evangelio del día en formato audio,
+              Novenas,
+              entre otras.
             </Text>
           </View>
 
