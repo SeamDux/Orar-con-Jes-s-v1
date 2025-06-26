@@ -18,24 +18,25 @@ export default function AntesConfesarseScreen() {
       />
       <ScrollView style={styles.container}>
         <View style={styles.content}>
-          <Text style={styles.subtitle}>Preparación para la Confesión</Text>
+          <Text style={styles.subtitle}>Antes de confesarse</Text>
 
-          <Text style={styles.category}>¿Qué es la Confesión?</Text>
-          <Text style={styles.text}>
-            La Confesión o Sacramento de la Reconciliación es el sacramento por el cual recibimos el perdón de Dios por nuestros pecados a través del ministerio de la Iglesia.
-          </Text>
-
-          <Text style={styles.category}>Pasos para una buena confesión</Text>
-          <Text style={styles.text}>1. Examen de conciencia</Text>
-          <Text style={styles.text}>2. Arrepentimiento sincero</Text>
-          <Text style={styles.text}>3. Propósito de enmienda</Text>
-          <Text style={styles.text}>4. Decir los pecados al sacerdote</Text>
-          <Text style={styles.text}>5. Cumplir la penitencia</Text>
+          <Text style={styles.category}>•  Dolor sincero por los pecados cometidos. </Text>
+          <Text style={styles.text}>"El acto esencial de la penitencia, por parte del penitente, es la contrición, o sea, un rechazo claro y decidido del pecado cometido, junto con el propósito de no volver a cometerlo, por el amor que se tiene a Dios y que renace con el arrepentimiento. La contrición, entendida así, es el principio y el alma de la conversión, de la metánoia evangélica que devuelve el hombre a Dios, como el hijo pródigo que vuelve al padre, y que tiene en el sacramento de la Penitencia su signo visible, perfeccionador de la misma atrición. Por ello, "de esta contrición del corazón depende la verdad de la penitencia" ... Es bueno recordar que contrición y conversión son aún más un acercamiento a la santidad de Dios, un nuevo encuentro de la propia verdad interior, turbada y trastornada por el pecado, una liberación en lo más profundo de sí mismo y, con ello, una recuperación de la alegría perdida, la alegría de ser salvados, que la mayoría de los hombres de nuestro tiempo ha dejado de gustar". (Juan Pablo II, Exhortación Apostólica, Reconciliatio et Poenitentiae, n. 31).</Text>
+          
+          <Text style={styles.category}>•  El propósito de no volver a cometer el pecado confesado (enmienda) es señal de arrepentimiento genuino y sincero.</Text>
+          <Text style={styles.text}>No es necesario prometer que jamás se pecará en el futuro. La resolución de evitar ponerse en ocasiones de pecado es muestra suficiente de un arrepentimiento sincero. La ayuda de la gracia de Dios junto con la intención de rectificar dará la fortaleza para resistir y vencer las tentaciones en el futuro.</Text>
 
           <Text style={styles.category}>Acto de Contrición</Text>
           <Text style={styles.prayer}>
-            Señor mío Jesucristo, Dios y Hombre verdadero, Creador, Padre y Redentor mío; por ser Vos quien sois, Bondad infinita, y porque os amo sobre todas las cosas, me pesa de todo corazón haberos ofendido; también me pesa porque podéis castigarme con las penas del infierno. Ayudado de vuestra divina gracia, propongo firmemente nunca más pecar, confesarme y cumplir la penitencia que me fuere impuesta. Amén.
+            ¡Señor mío, Jesucristo! Dios y Hombre verdadero, Creador, Padre y Redentor mío; por ser Vos quien sois, Bondad infinita, y porque os amo sobre todas las cosas, me pesa de todo corazón el haberos ofendido; también me pesa porque podéis castigarme con las penas del infierno. Ayudado por vuestra divina gracia, propongo firmemente nunca más pecar, confesarme y cumplir la penitencia que me fuere impuesta. Amén.
           </Text>
+
+          <Text style={styles.category}>Confesión General (Confiteor)</Text>
+          <Text style={styles.prayer}>
+            Yo confieso ante Dios todopoderoso y ante ustedes, hermanos, que he pecado mucho de pensamiento, palabra, obra y omisión. Por mi culpa, por mi culpa, por mi gran culpa. Por eso ruego a Santa María, siempre Virgen, a los Ángeles, a los Santos y a ustedes, hermanos, que intercedan por mí ante Dios, Nuestro Señor.
+          </Text>
+
+          <Text style={styles.category}>•  Podemos ahora confesarnos.</Text>
         </View>
       </ScrollView>
     </>
