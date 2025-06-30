@@ -17,6 +17,20 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
+          <Link href="/(app)/noticias-vaticano" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="church" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Noticias de la Iglesia - Santa Sede</Text>
+            </TouchableOpacity>
+          </Link>
+
+          <Link href="/(app)/consejo-camino" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="walk" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Consejos para el Camino</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/calendario" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="calendar-month" size={32} color={Colors.primary} />

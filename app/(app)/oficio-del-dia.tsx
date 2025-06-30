@@ -222,6 +222,7 @@ export default function OficioDelDiaScreen() {
                       if (decodedFileName.includes('Completas')) return 'Completas (Oración de la noche)';
                       if (decodedFileName.includes('EVANGELIO') || decodedFileName.includes('Evangelio')) return 'Evangelio del día';
                       if (decodedFileName.includes('EvANGELIO') || decodedFileName.includes('Evangelio')) return 'Evangelio del día';
+                      if (decodedFileName.includes('EANGELIO') || decodedFileName.includes('Evangelio')) return 'Evangelio del día';
                       if (decodedFileName.includes('Jueves')) return 'Completas (Oración de la noche)';
                       if (decodedFileName.includes('5.1-TERCIA')) return 'Hora Tercia';
                       if (decodedFileName.includes('5.2-SEXTA')) return 'Hora Sexta';
