@@ -164,6 +164,13 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
+          <Link href="/(app)/oraciones-difuntos/exorcismos" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="cross-celtic" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Exorcismos</Text>
+            </TouchableOpacity>
+          </Link>      
+
           <Link href="/(app)/bendiciones" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="hands-pray" size={32} color={Colors.primary} />
@@ -183,15 +190,8 @@ export default function HomePage() {
               <MaterialCommunityIcons name="gate" size={32} color={Colors.primary} />
               <Text style={styles.menuText}>Jubileo de la Esperanza 2025</Text>
             </TouchableOpacity>
-          </Link>
-          
-          <Link href="/(app)/cantoral" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="music-note" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Cantoral Breve</Text>
-            </TouchableOpacity>
-          </Link>
-      </ScrollView>
+          </Link>  
+        </ScrollView>
       
       <Link href="/(app)/buscar" asChild>
         <TouchableOpacity style={styles.searchButton}>
