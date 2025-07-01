@@ -71,6 +71,14 @@ export default function EucaristiaScreen() {
               La Santa Misa
             </Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => router.push('/(app)/adoracion')}
+          >
+            <Text style={styles.buttonText}>
+              Adoración al Santísimo
+            </Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </>
