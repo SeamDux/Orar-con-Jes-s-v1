@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, Linking, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -48,6 +48,12 @@ export default function PenitenciaScreen() {
             </Text>
           </View>
         </View>
+        <TouchableOpacity
+          style={styles.buttonSantTrinidad}
+          onPress={() => Linking.openURL('https://www.obispadodesanbernardo.cl/wp-content/uploads/2025/04/Manual-del-Peregrino-2025-pdf.pdf')}
+        >
+          <Text style={styles.buttonText}>Abrir Manual del Peregrino (PDF)</Text>
+        </TouchableOpacity>
       </ScrollView>
     </>
   );
@@ -109,5 +115,26 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     textAlign: 'justify',
     marginBottom: 15,
+  },
+  buttonSantTrinidad: {
+    backgroundColor: Colors.primary,
+    padding: 15,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginBottom: 15,
+    marginTop: -5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 }); 

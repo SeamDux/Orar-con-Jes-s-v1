@@ -87,6 +87,13 @@ export default function DevocionesJesusScreen() {
           >
             <Text style={styles.devocionItemTitulo}>Vía Crucis</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity 
+            style={styles.devocionItem}
+            onPress={() => router.push('/devociones/via-crucis-breve')}
+          >
+            <Text style={styles.devocionItemTitulo}>Vía Crucis breve</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </>

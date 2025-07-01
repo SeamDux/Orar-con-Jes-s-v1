@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
-import { Stack } from 'expo-router';
+import { Stack, Link } from 'expo-router';
 
 export default function DevocionesScreen() {
   return (
@@ -36,6 +36,12 @@ export default function DevocionesScreen() {
             </Text>
           </View>
 
+          <Link href="/(app)/trinidad" asChild>
+            <TouchableOpacity style={styles.buttonSantTrinidad}>
+              <Text style={styles.buttonText}>Ir a Devociones a la Santísima Trinidad</Text>
+            </TouchableOpacity>
+          </Link>
+
           <View style={styles.dayCard}>
             <Text style={styles.dayTitle}>Lunes</Text>
             <Text style={styles.subtitle}>Las almas del Purgatorio</Text>
@@ -61,6 +67,12 @@ export default function DevocionesScreen() {
             </Text>
           </View>
 
+          <Link href="/(app)/devociones-jose" asChild>
+            <TouchableOpacity style={styles.buttonSantTrinidad}>
+              <Text style={styles.buttonText}>Ir a Devociones a San José</Text>
+            </TouchableOpacity>
+          </Link>
+
           <View style={styles.dayCard}>
             <Text style={styles.dayTitle}>Jueves</Text>
             <Text style={styles.subtitle}>La Santísima Eucaristía</Text>
@@ -68,6 +80,12 @@ export default function DevocionesScreen() {
               A lo largo del día, haz frecuentes comuniones espirituales y, si es posible, una visita al Santísimo.
             </Text>
           </View>
+
+          <Link href="/(app)/santa-misa" asChild>
+            <TouchableOpacity style={styles.buttonSantTrinidad}>
+              <Text style={styles.buttonText}>Ir a Santa Misa</Text>
+            </TouchableOpacity>
+          </Link>
 
           <View style={styles.dayCard}>
             <Text style={styles.dayTitle}>Viernes</Text>
@@ -77,6 +95,12 @@ export default function DevocionesScreen() {
             </Text>
           </View>
 
+          <Link href="/(app)/devociones/via-crucis" asChild>
+            <TouchableOpacity style={styles.buttonSantTrinidad}>
+              <Text style={styles.buttonText}>Ir al Vía Crucis</Text>
+            </TouchableOpacity>
+          </Link>
+
           <View style={styles.dayCard}>
             <Text style={styles.dayTitle}>Sábado</Text>
             <Text style={styles.subtitle}>La Santísima Virgen María</Text>
@@ -84,6 +108,12 @@ export default function DevocionesScreen() {
               Reza la Salve u otra devoción mariana.
             </Text>
           </View>
+
+          <Link href="/(app)/devociones-maria" asChild>
+            <TouchableOpacity style={styles.buttonSantTrinidad}>
+              <Text style={styles.buttonText}>Ir a Devociones a la Virgen María</Text>
+            </TouchableOpacity>
+          </Link>
         </View>
       </ScrollView>
     </>
@@ -165,5 +195,26 @@ const styles = StyleSheet.create({
     color: '#333',
     lineHeight: 24,
     textAlign: 'justify',
+  },
+  buttonSantTrinidad: {
+    backgroundColor: Colors.primary,
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginBottom: 15,
+    marginTop: -5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 }); 

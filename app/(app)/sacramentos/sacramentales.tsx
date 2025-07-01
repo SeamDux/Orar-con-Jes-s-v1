@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 
 export default function SacramentalesScreen() {
+  const router = useRouter();
+
   return (
     <>
       <Stack.Screen 
@@ -47,6 +49,15 @@ export default function SacramentalesScreen() {
               Cuando la Iglesia pide públicamente y con autoridad, en nombre de Jesucristo, que una persona o un objeto sea protegido contra las asechanzas del maligno y sustraída a su dominio, se habla de exorcismo. Jesús lo practicó, de él tiene la Iglesia el poder y el oficio de exorcizar.
             </Text>
           </View>
+
+          <TouchableOpacity 
+            style={styles.button}
+            onPress={() => router.push('/(app)/oraciones-difuntos/exorcismos')}
+          >
+            <Text style={styles.buttonText}>
+              Exorcismos
+            </Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </>
@@ -110,5 +121,25 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     marginBottom: 15,
     textAlign: 'left',
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 }); 

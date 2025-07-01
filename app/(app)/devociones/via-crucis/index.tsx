@@ -39,9 +39,23 @@ export default function ViaCrucisScreen() {
       <ScrollView style={styles.container}>
         <View style={styles.content}>
           <Text style={styles.introText}>
-            El Vía Crucis es una devoción que nos ayuda a meditar sobre la Pasión de Cristo. 
-            A través de las 14 estaciones, seguimos los pasos de Jesús en su camino hacia el Calvario.
+          La piedad ha llevado a los cristianos a la práctica del Vía Crucis,
+          siguiendo al Salvador en su camino al Calvario. El Pretorio, la
+          subida al Gólgota y el Sepulcro, jalonan el recorrido de Jesús que
+          nos redimió con su Santa Cruz.
+          El Vía Crucis se hace recorriendo, si se puede, las catorce
+          estaciones erigidas en una iglesia u oratorio o en otro lugar. Se
+          medita en cada una de ellas una escena de la Pasión y Muerte de
+          Cristo. Presentamos los textos de San Josemaría Escrivá. Se puede
+          ganar una indulgencia plenaria con las debidas disposiciones. 
           </Text>
+
+          <TouchableOpacity
+            style={styles.prepButton}
+            onPress={() => router.push('/devociones/via-crucis/oracion-preparatoria')}
+          >
+            <Text style={styles.prepButtonText}>Oración preparatoria</Text>
+          </TouchableOpacity>
 
           {estaciones.map((estacion) => (
             <TouchableOpacity 
@@ -120,5 +134,29 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: Colors.text,
     fontWeight: '500',
+  },
+  prepButton: {
+    backgroundColor: Colors.primary,
+    borderRadius: 25,
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    marginBottom: 24,
+    marginTop: 0,
+    alignSelf: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 2.0,
+    elevation: 3,
+  },
+  prepButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    letterSpacing: 1,
   },
 }); 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, View, Text, TouchableOpacity, Linking } from 'react-native';
 import { Stack } from 'expo-router';
 import { BlurView } from 'expo-blur';
 import { StatusBar } from 'expo-status-bar';
@@ -51,6 +51,46 @@ export default function JubileoScreen() {
             Amén.
           </Text>
         </BlurView>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#006400',
+            padding: 16,
+            borderRadius: 10,
+            alignItems: 'center',
+            marginTop: 24,
+            marginBottom: 24,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            shadowRadius: 3,
+            elevation: 4,
+          }}
+          onPress={() => Linking.openURL('https://www.obispadodesanbernardo.cl/wp-content/uploads/2025/04/Manual-del-Peregrino-2025-pdf.pdf')}
+        >
+          <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 16 }}>
+            Abrir Manual del Peregrino (PDF)
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#006400',
+            padding: 16,
+            borderRadius: 10,
+            alignItems: 'center',
+            marginTop: 0,
+            marginBottom: 32,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            shadowRadius: 3,
+            elevation: 4,
+          }}
+          onPress={() => Linking.openURL('https://www.obispadodesanbernardo.cl/2024/12/09/ano-jubilar-2025-peregrinos-de-la-esperanza/')}
+        >
+          <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 16 }}>
+            Más información sobre el Año Jubilar
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </Background>
   );

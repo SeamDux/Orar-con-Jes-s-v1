@@ -204,6 +204,13 @@ export default function HomePage() {
               <MaterialCommunityIcons name="gate" size={32} color={Colors.primary} />
               <Text style={styles.menuText}>Jubileo de la Esperanza 2025</Text>
             </TouchableOpacity>
+          </Link>
+
+          <Link href="/(app)/cantoral" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="music-note" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Cantoral Breve</Text>
+            </TouchableOpacity>
           </Link>  
         </ScrollView>
       
