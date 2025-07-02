@@ -32,28 +32,28 @@ export default function ReginaCoeliScreen() {
 
           <Text style={styles.title}>En latín</Text>
           <Text style={styles.prayer}>
-          V: Regina caeli, laetare,
-          alleluia.{"\n"}
-          R: Quia quem meruisti
-          portare, alleluia.{"\n\n"}
-          V: Resurrexit, sicut dixit,
-          alleluia.{"\n"}
-          R: Ora pro nobis Deum,
-          alleluia.{"\n\n"}
-          V: Gaude et laetare Virgo
-          María, alleluia.{"\n"}
-          R: Quia surrexit Dominus
-          vere, alleluia.{"\n\n"}
-          Oremus:{"\n\n"}
-          Deus, qui per resurrectionem
-          Filii tui, Domini nostri Iesu
-          Christi, mundum laetificare
-          dignatus es: praesta, quaesumus;
-          ut, per eius Genetricem
-          Virginem Mariam, perpetuae
-          capiamus gaudia vitae.
-          Per eundem Christum
-          Dominum nostrum. Amen.
+            V: Regina caeli, laetare,
+            alleluia.{"\n"}
+            R: Quia quem meruisti
+            portare, alleluia.{"\n\n"}
+            V: Resurrexit, sicut dixit,
+            alleluia.{"\n"}
+            R: Ora pro nobis Deum,
+            alleluia.{"\n\n"}
+            V: Gaude et laetare Virgo
+            María, alleluia.{"\n"}
+            R: Quia surrexit Dominus
+            vere, alleluia.{"\n\n"}
+            Oremus:{"\n\n"}
+            Deus, qui per resurrectionem
+            Filii tui, Domini nostri Iesu
+            Christi, mundum laetificare
+            dignatus es: praesta, quaesumus;
+            ut, per eius Genetricem
+            Virginem Mariam, perpetuae
+            capiamus gaudia vitae.
+            Per eundem Christum
+            Dominum nostrum. Amen.
           </Text>
         </View>
       </ScrollView>
