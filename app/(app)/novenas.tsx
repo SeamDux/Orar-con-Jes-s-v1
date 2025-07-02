@@ -32,6 +32,13 @@ export default function NovenasScreen() {
             </TouchableOpacity>
           </Link>
 
+          <Link href="/(app)/devociones-maria/novena-inmaculada" asChild>
+            <TouchableOpacity style={styles.optionCard}>
+              <Text style={styles.optionText}>Novena a la Inmaculada Concepción</Text>
+              <Text style={styles.optionSubtext}>(Nueve días de preparación para el 8 de diciembre)</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/novenas/san-jose" asChild>
             <TouchableOpacity style={styles.optionCard}>
               <Text style={styles.optionText}>Novena a San José</Text>

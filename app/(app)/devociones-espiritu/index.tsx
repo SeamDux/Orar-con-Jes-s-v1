@@ -48,6 +48,24 @@ export default function DevocionesEspirituScreen() {
               <Text style={styles.devocionItemTitulo}>{devocion.titulo}</Text>
             </TouchableOpacity>
           ))}
+          <TouchableOpacity 
+            style={styles.devocionItem}
+            onPress={() => router.push('/devociones-espiritu/dones')}
+          >
+            <Text style={styles.devocionItemTitulo}>Los dones del Espíritu Santo</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.devocionItem}
+            onPress={() => router.push('/devociones-espiritu/frutos')}
+          >
+            <Text style={styles.devocionItemTitulo}>Los frutos del Espíritu Santo</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.devocionItem}
+            onPress={() => router.push('/devociones-espiritu/decenario')}
+          >
+            <Text style={styles.devocionItemTitulo}>Decenario al Espíritu Santo</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </>

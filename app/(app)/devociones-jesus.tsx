@@ -94,6 +94,13 @@ export default function DevocionesJesusScreen() {
           >
             <Text style={styles.devocionItemTitulo}>Vía Crucis breve</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity 
+            style={styles.devocionItem}
+            onPress={() => router.push('/devociones/oracion-sagrado-dificultades')}
+          >
+            <Text style={styles.devocionItemTitulo}>Oración al Sagrado Corazón ante las dificultades de San Claudio de la Colombiere</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </>

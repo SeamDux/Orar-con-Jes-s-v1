@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import { Oracion } from '../../types';
-import { Stack } from 'expo-router';
+import { Stack, Link } from 'expo-router';
 
 const oraciones: Oracion[] = [
   {
@@ -103,13 +103,112 @@ export default function OracionesScreen() {
             </View>
           ) : (
             oraciones.map((oracion) => (
-              <TouchableOpacity 
-                key={oracion.id}
-                style={styles.oracionItem}
-                onPress={() => setOracionSeleccionada(oracion)}
-              >
-                <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
-              </TouchableOpacity>
+              oracion.id === 'padre-nuestro' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/padre-nuestro" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'ave-maria' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/ave-maria" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'gloria' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/gloria" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'credo' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/credo" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'senal-cruz' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/senal-cruz" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'ofrecimiento-obras' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/ofrecimiento-obras" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'angelus' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/angelus" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'yo-confieso' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/yo-confieso" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'oracion-papa' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/oracion-papa" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'regina-coeli' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/regina-coeli" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'vocaciones-sacerdotales' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/vocaciones-sacerdotales" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'vocaciones-religiosas' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/vocaciones-religiosas" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'oracion-lluvia' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/oracion-lluvia" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'angel-guarda' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/angel-guarda" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) : (
+                <TouchableOpacity 
+                  key={oracion.id}
+                  style={styles.oracionItem}
+                  onPress={() => setOracionSeleccionada(oracion)}
+                >
+                  <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                </TouchableOpacity>
+              )
             ))
           )}
         </View>
