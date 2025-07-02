@@ -53,7 +53,7 @@ export default function DevocionesMariaScreen() {
     },
     {
       id: 'mes-maria',
-      titulo: 'Mes de María',
+      titulo: 'Oraciones del Mes de María',
       ruta: '/devociones-maria/mes-maria'
     },
     {
