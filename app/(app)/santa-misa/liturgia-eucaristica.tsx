@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, Pressable } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 
 export default function LiturgiaEucaristicaPage() {
+  const router = useRouter();
   return (
     <>
       <Stack.Screen 
@@ -68,9 +69,6 @@ export default function LiturgiaEucaristicaPage() {
           <Text style={styles.textoRojoItalic}>El sacerdote lee la 'Oración sobre las ofrendas' prevista para ese día.</Text>
 
           <Text style={styles.tituloRojo}>Plegaria Eucarística</Text>
-          <Text style={styles.textoRojoItalic}>Después de terminar la oracion, el sacerdote dice al pueblo:</Text>
-          <Text style={styles.texto}>El Señor esté con ustedes.</Text>
-          <Text style={styles.textoItalica}>R. Y con tu espíritu.</Text>
 
           <Text style={styles.texto}>Levantemos el corazón</Text>
           <Text style={styles.textoItalica}>R. Lo tenemos levantado hacia el Señor.</Text>
@@ -89,142 +87,19 @@ export default function LiturgiaEucaristicaPage() {
             Hosanna en el cielo.
           </Text>
 
-          <Text style={styles.tituloRojo}>Plegaria Eucarística II</Text>
-          <Text style={styles.texto}>
-            Santo eres en verdad, Señor,{'\n'}
-            fuente de toda santidad;{'\n'}
-            <Text style={styles.textoRojoItalic}>Pone las manos sobre los dones.</Text>{'\n'}
-            por eso te pedimos que santifiques estos dones{'\n'}
-            con la efusión de tu Espíritu,{'\n'}
-            de manera que sean para nosotros{'\n'}
-            Cuerpo y Sangre{'\n'}
-            de Jesucristo, nuestro Señor.
-          </Text>
-
-          <Text style={styles.texto}>El cual,</Text>
-          <Text style={styles.textoRojoItalic}>Junta las manos.</Text>
-          <Text style={styles.texto}>
-            cuando iba a ser entregado a su Pasión,{'\n'}
-            voluntariamente aceptada,{'\n'}
-            tomó pan, dándote gracias, lo partió{'\n'}
-            y lo dio a sus discípulos, diciendo:
-          </Text>
-
-          <Text style={styles.textoRojoItalic}>El sacerdote, con claridad, pronuncia las palabras del Señor para consagrar el pan:</Text>
-
-          <Text style={styles.textoNegrita}>
-            TOMEN Y COMAN TODOS DE ÉL,{'\n'}
-            PORQUE ESTO ES MI CUERPO,{'\n'}
-            QUE SERÁ ENTREGADO POR USTEDES.
-          </Text>
-
-          <Text style={styles.texto}>Del mismo modo, acabada la cena,</Text>
-          <Text style={styles.texto}>
-            tomó el cáliz,{'\n'}
-            y, dándote gracias de nuevo,{'\n'}
-            lo pasó a sus discípulos diciendo:
-          </Text>
-
-          <Text style={styles.textoNegrita}>
-            TOMEN Y BEBAN TODOS DE ÉL,{'\n'}
-            PORQUE ÉSTE ES EL CÁLIZ DE MI SANGRE,{'\n'}
-            SANGRE DE LA ALIANZA NUEVA Y ETERNA,{'\n'}
-            QUE SERÁ DERRAMADA POR USTEDES{'\n'}
-            Y POR MUCHOS{'\n'}
-            PARA EL PERDÓN DE LOS PECADOS.{'\n'}
-            HAGAN ESTO EN CONMEMORACIÓN MÍA.
-          </Text>
-
-          <Text style={styles.textoRojoItalic}>El celebrante dice:</Text>
-          <Text style={styles.texto}>Éste es el Sacramento de nuestra fe.</Text>
-          <Text style={styles.textoRojoItalic}>o bien:</Text>
-          <Text style={styles.texto}>Éste es el Misterio de la fe.</Text>
-
-          <Text style={styles.textoItalica}>
-            Anunciamos tu muerte,{'\n'}
-            proclamamos tu resurrección.{'\n'}
-            ¡Ven, Señor Jesús!
-          </Text>
-
-          <Text style={styles.texto}>Aclamad el Misterio de la redención</Text>
-          <Text style={styles.textoItalica}>
-            Cada vez que comemos de este pan{'\n'}
-            y bebemos de este cáliz,{'\n'}
-            anunciamos tu muerte, Señor,{'\n'}
-            hasta que vuelvas.
-          </Text>
-
-          <Text style={styles.texto}>Cristo se entregó por nosotros.</Text>
-
-          <Text style={styles.textoItalica}>
-            Por tu cruz y resurrección{'\n'}
-            nos has salvado, Señor.
-          </Text>
-
-          <Text style={styles.textoRojoItalic}>El sacerdote prosigue.</Text>
-
-          <Text style={styles.texto}>
-            Así, pues, Padre,{'\n'}
-            al celebrar ahora el memorial{'\n'}
-            de la muerte y resurrección de tu Hijo,{'\n'}
-            te ofrecemos{'\n'}
-            el pan de vida y el cáliz de salvación,{'\n'}
-            y te damos gracias{'\n'}
-            porque nos haces dignos de servirte en tu presencia.
-          </Text>
-
-          <Text style={styles.texto}>
-            Te pedimos humildemente{'\n'}
-            que el Espíritu Santo congregue en la unidad{'\n'}
-            a cuantos participamos{'\n'}
-            del Cuerpo y Sangre de Cristo.
-          </Text>
-
-          <Text style={styles.texto}>
-            Acuérdate, Señor,{'\n'}
-            de tu Iglesia extendida por toda la tierra;{'\n'}
-            y reunida aquí en el domingo,{'\n'}
-            día en que Cristo ha vencido a la muerte{'\n'}
-            y nos ha hecho partícipes de su vida inmortal;
-          </Text>
-
-          <Text style={styles.texto}>
-            y con el Papa N.,{'\n'}
-            con nuestro Obispo N.,{'\n'}
-            y todos los pastores que cuidan de tu pueblo,{'\n'}
-            llévala a su perfección por la caridad.
-          </Text>
-
-          <Text style={styles.texto}>
-            Acuérdate también de nuestros hermanos{'\n'}
-            que durmieron en la esperanza{'\n'}
-            de la resurrección,{'\n'}
-            y de todos los que han muerto en tu misericordia;{'\n'}
-            admítelos a contemplar la luz de tu rostro.
-          </Text>
-
-          <Text style={styles.texto}>
-            Ten misericordia de todos nosotros,{'\n'}
-            y así, con María, la Virgen Madre de Dios,{'\n'}
-            su esposo San José,{'\n'}
-            los apóstoles{'\n'}
-            y cuantos vivieron en tu amistad{'\n'}
-            a través de los tiempos,{'\n'}
-            merezcamos, por tu Hijo Jesucristo,{'\n'}
-            compartir la vida eterna{'\n'}
-            y cantar tus alabanzas.
-          </Text>
-          <Text style={styles.textoRojoItalic}>Elevando los dones, prosigue:</Text>
-
-          <Text style={styles.texto}>
-            Por Cristo, con él y en él,{'\n'}
-            a ti, Dios Padre omnipotente,{'\n'}
-            en la unidad del Espíritu Santo,{'\n'}
-            todo honor y toda gloria{'\n'}
-            por los siglos de los siglos.
-          </Text>
-
-          <Text style={styles.textoItalica}>Amén.</Text>
+          <Text style={{marginBottom: 10, fontWeight: 'bold', fontSize: 16, textAlign: 'center'}}>Selecciona una de las plegarias principales:</Text>
+          <Pressable style={styles.opcion} onPress={() => router.push('/santa-misa/plegaria-1')}>
+            <Text style={styles.opcionTexto}>Plegaria Eucarística I (Canon Romano)</Text>
+          </Pressable>
+          <Pressable style={styles.opcion} onPress={() => router.push('/santa-misa/plegaria-2')}>
+            <Text style={styles.opcionTexto}>Plegaria Eucarística II</Text>
+          </Pressable>
+          <Pressable style={styles.opcion} onPress={() => router.push('/santa-misa/plegaria-3')}>
+            <Text style={styles.opcionTexto}>Plegaria Eucarística III</Text>
+          </Pressable>
+          <Pressable style={styles.opcion} onPress={() => router.push('/santa-misa/plegaria-4')}>
+            <Text style={styles.opcionTexto}>Plegaria Eucarística IV</Text>
+          </Pressable>
 
           <Text style={styles.tituloRojo}>Rito de la Comunión</Text>
           <Text style={styles.textoRojoItalic}>Una vez que el sacerdote ha dejado el cáliz sobre el altar y la patena, dice:</Text>
@@ -436,5 +311,18 @@ const styles = StyleSheet.create({
     color: '#dc2626',
     fontStyle: 'italic',
     textAlign: 'justify',
+  },
+  opcion: {
+    padding: 10,
+    borderWidth: 1,
+    borderColor: Colors.primary,
+    borderRadius: 5,
+    marginBottom: 10,
+  },
+  opcionTexto: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: Colors.primary,
+    textAlign: 'center',
   },
 }); 

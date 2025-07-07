@@ -24,6 +24,13 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
+          <Link href="/(app)/noticias-iglesia-chile" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="flag" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Noticias de la Iglesia en Chile</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/evangelio-del-dia" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="book-open-variant" size={32} color={Colors.primary} />
@@ -91,6 +98,13 @@ export default function HomePage() {
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="clock-outline" size={32} color={Colors.primary} />
               <Text style={styles.menuText}>Liturgia de las Horas</Text>
+            </TouchableOpacity>
+          </Link>
+
+          <Link href="/(app)/liturgia-horas-dia" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="clock" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Liturgia de las Horas del Día</Text>
             </TouchableOpacity>
           </Link>
 
