@@ -24,6 +24,13 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
+          <Link href="/(app)/evangelio-del-dia" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="book-open-variant" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Evangelio del día</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/consejo-camino" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="walk" size={32} color={Colors.primary} />
@@ -211,7 +218,7 @@ export default function HomePage() {
               <MaterialCommunityIcons name="music-note" size={32} color={Colors.primary} />
               <Text style={styles.menuText}>Cantoral Breve</Text>
             </TouchableOpacity>
-          </Link>  
+          </Link>
         </ScrollView>
       
       <Link href="/(app)/buscar" asChild>

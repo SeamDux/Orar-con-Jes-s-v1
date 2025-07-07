@@ -60,6 +60,44 @@ export default function AdoracionScreen() {
       />
       <ScrollView style={styles.container}>
         <View style={styles.content}>
+          {/* Introducción completa sobre la adoración al Santísimo Sacramento */}
+          <Text style={[styles.oracionTexto, {fontStyle: 'italic', color: '#b71c1c', marginBottom: 16}]}>“La Iglesia católica ha dado y continúa dando este culto de adoración que se debe al sacramento de la Eucaristía no solamente durante la misa, sino también fuera de su celebración: conservando con el mayor cuidado las hostias consagradas, presentándolas a los fieles para que las veneren con solemnidad, y las lleven en procesión.”</Text>
+          <Text style={[styles.oracionTexto, {fontStyle: 'italic', color: '#b71c1c', marginBottom: 16}]}>“El sagrario (tabernáculo) estaba al principio destinado a guardar dignamente la Eucaristía para que pudiera ser llevada a los enfermos y ausentes fuera de la misa. Por la profundización de la fe en la presencia real de Cristo en su Eucaristía, la Iglesia tomó conciencia del sentido de la adoración silenciosa del Señor presente bajo las especies eucarísticas”. (Cf. CEC 1379-1379).</Text>
+          <Text style={styles.oracionTexto}>A pesar de que la Eucaristía ha sido instituida para ser comida, “no debe dejar de ser adorada”. El fundamento de la adoración eucarística es perfectamente válido y firme: la presencia real del Señor. Es culto de “latría”, el que “se debe al Dios verdadero”.</Text>
+          <Text style={{fontWeight: 'bold', color: '#b71c1c', fontSize: 20, marginTop: 18, marginBottom: 10, textAlign: 'center'}}>Guía para la adoración del Santísimo Sacramento</Text>
+          <Text style={styles.oracionTexto}>Tal vez hace mucho tiempo que no estás un rato a solas con Jesús en la capilla, o quizás ésta sea la primera vez que te dispones a rezar frente a Jesús expuesto en el Santísimo Sacramento. Por eso te ofrecemos una guía que puede servirte como orientación:</Text>
+          <Text style={styles.oracionTexto}>Lo primero que te sugerimos es que te arrodilles delante de Jesús, lo mires sobre el altar y hagas una breve oración de adoración, en la que reconozcas toda su grandeza como verdadero Hijo de Dios hecho hombre, todo el amor que te ha manifestado a lo largo de tu vida y le pidas que sea Él mismo quien disponga tu corazón para poder escucharlo y aceptar sinceramente lo que Él quiera decirte.</Text>
+          <Text style={styles.oracionTexto}>Ponte cómodo, si quieres te puedes sentar, mirarlo e imaginar que estás con Él en Galilea, cerca del lago, con los discípulos y rodeado de toda la gente que lo seguía. Es el mismo Jesús, bajo apariencia de pan, el que está delante tuyo. Imaginándote en ese lugar lee el Evangelio (Jn 6,1-13). Es un episodio conocido, pero aquí te invitamos a que te detengas a pensar algunos detalles:</Text>
+          <Text style={styles.oracionTexto}>El que dio los panes y los pescados para alimentar a la muchedumbre era un muchacho. Le dio lo que tenía, no era mucho, pero era todo lo que tenía.</Text>
+          <Text style={styles.oracionTexto}>Eran muchos lo que tenían hambre (5000 hombres), por eso se entiende la reflexión de Andrés: “¿Qué es esto para tanta gente?”</Text>
+          <Text style={styles.oracionTexto}>Jesús toma lo que el muchacho le entrega y da de comer a todos y sobran pedazos todavía. Jesús hace un signo maravilloso a partir de la generosidad de un joven.</Text>
+          <Text style={styles.oracionTexto}>Delante del mismo Jesús pregúntate:</Text>
+          <Text style={{fontWeight: 'bold', marginLeft: 10, marginBottom: 4}}>¿Ves el "hambre" de la gente de este tiempo? (hambre material, de justicia, de Dios, de paz ...) ¿O estás cerrado en tus propios problemas?</Text>
+          <Text style={{fontWeight: 'bold', marginLeft: 10, marginBottom: 4}}>¿Crees que Jesús puede hacer algo para sacar el "hambre" de la gente?</Text>
+          <Text style={{fontWeight: 'bold', marginLeft: 10, marginBottom: 4}}>¿Te das cuenta de que tienes muchos "panes" que puedes darle a Jesús para que Él los multiplique?</Text>
+          <Text style={{fontWeight: 'bold', marginLeft: 10, marginBottom: 16}}>¿Serías capaz de ofrecerle a Jesús tu vida en serio para que Él pueda contar contigo?</Text>
+          <Text style={styles.oracionTexto}>Como todos sabemos que a veces nos resulta difícil encontrar las palabras para responder a Jesús y que las fuerzas que tenemos para cumplir nuestros compromisos son muy pocas, acompáñale con la respuesta que te salga del corazón o con la siguiente oración de acción de gracias de Santo Tomás de Aquino:</Text>
+          <View style={{backgroundColor: '#f3f4f6', borderRadius: 8, padding: 12, marginVertical: 10}}>
+            <Text style={{fontStyle: 'italic', fontSize: 17, marginBottom: 8}}>
+              Te doy gracias, Señor, Padre santo, Dios todopoderoso y eterno, porque, aunque soy un siervo pecador y sin mérito alguno, has querido alimentarme misericordiosamente con el Cuerpo y la Sangre de tu Hijo, nuestro Señor Jesucristo.
+            </Text>
+            <Text style={{fontStyle: 'italic', fontSize: 17, marginBottom: 8}}>
+              Que esta sagrada comunión no vaya a ser para mí ocasión de castigo, sino causa de perdón y salvación.
+            </Text>
+            <Text style={{fontStyle: 'italic', fontSize: 17, marginBottom: 8}}>
+              Que sea para mí armadura de fe, escudo de buena voluntad; que me libre de todos mis vicios y me ayude a superar mis pasiones desordenadas; que aumente mi caridad y mi paciencia, mi obediencia y mi humildad y mi capacidad para hacer el bien.
+            </Text>
+            <Text style={{fontStyle: 'italic', fontSize: 17, marginBottom: 8}}>
+              Que sea defensa inexpugnable contra todos mis enemigos, visibles e invisibles, y guía de todos mis impulsos y deseos.
+            </Text>
+            <Text style={{fontStyle: 'italic', fontSize: 17, marginBottom: 8}}>
+              Que me una más íntimamente a ti, el único y verdadero Dios, y me conduzca con seguridad al banquete del cielo, donde tú, con tu Hijo y el Espíritu Santo, eres luz verdadera, satisfacción cumplida, gozo perdurable y felicidad perfecta.
+            </Text>
+            <Text style={{fontStyle: 'italic', fontSize: 17, marginBottom: 8}}>
+              Por Cristo, nuestro Señor. Amén.
+            </Text>
+          </View>
+          <Text style={styles.oracionTexto}>Para terminar tu adoración puedes abrir tu corazón al Señor pidiendo lo que necesites y especialmente, rezar por las intenciones de la Iglesia y del Santo Padre, tu familia y tus necesidades.</Text>
           {oracionSeleccionada ? (
             <View style={styles.oracionDetalle}>
               <Text style={styles.oracionTitulo}>{oracionSeleccionada.titulo}</Text>

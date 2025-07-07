@@ -18,6 +18,14 @@ export default function DevocionesJesusScreen() {
       />
       <ScrollView style={styles.container}>
         <View style={styles.content}>
+
+        <TouchableOpacity 
+            style={styles.devocionItem}
+            onPress={() => router.push('/devociones/salmo-2')}
+          >
+            <Text style={styles.devocionItemTitulo}>Salmo 2</Text>
+          </TouchableOpacity>
+
           <TouchableOpacity 
             style={styles.devocionItem}
             onPress={() => router.push('/devociones/coronilla-misericordia')}
