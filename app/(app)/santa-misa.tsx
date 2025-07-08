@@ -19,6 +19,13 @@ export default function SantaMisaPage() {
       />
       <ScrollView style={styles.container}>
         <View style={styles.content}>
+          <Link href="/(app)/santa-misa/misa-del-dia" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="calendar-today" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Misa del día</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/santa-misa/preparacion" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="heart-pulse" size={32} color={Colors.primary} />

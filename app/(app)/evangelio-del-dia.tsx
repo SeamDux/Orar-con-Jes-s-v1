@@ -1,3 +1,63 @@
+import { Platform, View, Text, Button } from 'react-native';
+import { WebView } from 'react-native-webview';
+import React, { useEffect } from 'react';
+import { useNavigation } from 'expo-router';
+
+export default function EvangelioDelDia() {
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions?.({ title: 'Evangelio del día' });
+  }, [navigation]);
+
+  if (Platform.OS === 'web') {
+    // Botón personalizado usando HTML para mejor integración web
+    return (
+      <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', padding: 20 }}>
+        <Text style={{ marginBottom: 10, textAlign: 'center', fontSize: 18, fontWeight: 'bold' }}>
+          Evangelio del día
+        </Text>
+        <button
+          style={{
+            backgroundColor: '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: 6,
+            padding: '10px 20px',
+            fontSize: 16,
+            cursor: 'pointer',
+            marginBottom: 16,
+          }}
+          onClick={() => window.open('https://www.eucaristiadiaria.cl/dia.php', '_blank')}
+        >
+          Ir a eucaristiadiaria.cl
+        </button>
+        
+        <div style={{ width: '100%', maxWidth: 600, height: 1200, marginTop: 20 }}>
+          <iframe
+            src="https://www.eucaristiadiaria.cl/compartir.php"
+            width="100%"
+            height="100%"
+            style={{ border: 'none' }}
+            title="Evangelio del día"
+          />
+        </div>
+      </View>
+    );
+  }
+  // En móvil, WebView
+  return (
+    <WebView
+      source={{ uri: 'https://www.eucaristiadiaria.cl/compartir.php' }}
+      style={{ flex: 1 }}
+      startInLoadingState={true}
+      javaScriptEnabled={true}
+      domStorageEnabled={true}
+    />
+  );
+}
+
+// --- CÓDIGO ANTERIOR COMENTADO PARA REFERENCIA ---
+/*
 import React, { useEffect, useState } from 'react';
 import { View, Text, ScrollView, ActivityIndicator, StyleSheet, Linking } from 'react-native';
 import * as rssParser from 'react-native-rss-parser';
@@ -255,4 +315,5 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     textAlign: 'right',
   },
-}); 
+});
+*/ 

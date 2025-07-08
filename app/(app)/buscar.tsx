@@ -4,6 +4,7 @@ import { Text, View } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import { Stack, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import Fuse from 'fuse.js';
 
 // Definir la estructura de los elementos de búsqueda
 interface SearchItem {
@@ -21,6 +22,12 @@ const searchData: SearchItem[] = [
     route: '/santa-misa',
     category: 'Liturgia',
     keywords: ['misa', 'eucaristia', 'liturgia', 'sacrificio', 'comunion', 'cuerpo cristo', 'sangre cristo']
+  },
+  {
+    title: 'Misa del día',
+    route: '/santa-misa/misa-del-dia',
+    category: 'Liturgia',
+    keywords: ['misa del día', 'misa diaria', 'lecturas', 'oraciones', 'colecta', 'eucaristía', 'santa misa', 'propio del día']
   },
   {
     title: 'Ordinario de la Misa',
@@ -58,13 +65,7 @@ const searchData: SearchItem[] = [
     category: 'Liturgia',
     keywords: ['eucaristia', 'ofrendas', 'consagracion', 'padre nuestro', 'comunion', 'misa']
   },
-  {
-    title: 'Ritos de Despedida',
-    route: '/santa-misa/ritos-despedida',
-    category: 'Liturgia',
-    keywords: ['despedida', 'bendicion', 'envio', 'final', 'misa']
-  },
-
+  
   // Las virtudes
   {
     title: 'Teologales',
@@ -131,13 +132,7 @@ const searchData: SearchItem[] = [
 
 
 
-  // Santoral
-  {
-    title: 'Santoral',
-    route: '/santoral',
-    category: 'Devociones',
-    keywords: ['santos', 'santoral', 'vidas', 'ejemplos', 'testigos', 'fe']
-  },
+ 
 
   // Oraciones de Siempre
   {
@@ -207,6 +202,12 @@ const searchData: SearchItem[] = [
   {
     title: 'Memorias y Ferias',
     route: '/calendario',
+    category: 'Liturgia',
+    keywords: ['memorias', 'ferias', 'dias', 'semana', 'liturgia']
+  },
+  {
+    title: 'Evangelio del día',
+    route: '/(app)/evangelio-del-dia',
     category: 'Liturgia',
     keywords: ['memorias', 'ferias', 'dias', 'semana', 'liturgia']
   },
@@ -385,6 +386,24 @@ const searchData: SearchItem[] = [
     category: 'Devociones al Espiritu Santo',
     keywords: ['espiritu', 'santo', 'letanias']
   },
+  {
+    title: 'Los dones del Espiritu Santo',
+    route: '/devociones-espiritu/dones',
+    category: 'Devociones al Espiritu Santo',
+    keywords: ['espiritu', 'santo', 'letanias']
+  },
+  {
+    title: 'Los frutos del Espiritu Santo',
+    route: '/devociones-espiritu/frutos',
+    category: 'Devociones al Espiritu Santo',
+    keywords: ['espiritu', 'santo', 'letanias']
+  },
+  {
+    title: 'Decenario al Espiritu Santo',
+    route: '/devociones-espiritu/decenario',
+    category: 'Devociones al Espiritu Santo',
+    keywords: ['espiritu', 'santo', 'letanias']
+  },
 
   // Devociones a Nuestro Señor Jesucristo
 
@@ -394,6 +413,24 @@ const searchData: SearchItem[] = [
     category: 'Devociones a Nuestro Señor Jesucristo',
     keywords: ['coronilla', 'misericordia', 'Jesucristo']
   },
+  {
+    title: 'Vía Crucis',
+    route: '/devociones/via-crucis',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['via crucis', 'estaciones', 'cruz', 'jesus', 'pasión', 'devocion', 'viernes santo']
+  },
+  {
+    title: 'Vía Crucis breve',
+    route: '/devociones/via-crucis-breve',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['via crucis', 'estaciones', 'cruz', 'jesus', 'pasión', 'devocion', 'viernes santo']
+  },
+  {
+    title: 'Salmo 2',
+    route: '/devociones/salmo-2',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['soneto', 'misericordia', 'Jesucristo', 'pasion', 'semana santa']
+  },
 
   {
     title: 'Soneto a Cristo Crucificado',
@@ -401,6 +438,7 @@ const searchData: SearchItem[] = [
     category: 'Devociones a Nuestro Señor Jesucristo',
     keywords: ['soneto', 'misericordia', 'Jesucristo', 'pasion', 'semana santa']
   },
+  
 
   {
     title: 'Oracion de San Agustín',
@@ -442,6 +480,12 @@ const searchData: SearchItem[] = [
     route: '/devociones/letanias-nombre',
     category: 'Devociones a Nuestro Señor Jesucristo',
     keywords: ['corazon', 'sagrado corazon', 'Jesucristo', 'viernes']
+  },
+  {
+    title: 'Oración de San Claudio de la Colombiere para las dificultades',
+    route: '/devociones/oracion-sagrado-dificultades',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['san claudio', 'colombiere', 'dificultades', 'oración', 'jesucristo', 'devocion', 'confianza', 'sagrado corazon']
   },
 
   // Sacramentos
@@ -496,6 +540,19 @@ const searchData: SearchItem[] = [
     category: 'Diocesis de San Bernardo',
     keywords: ['noticias', 'san bernardo']
   },
+  {
+    title: 'Noticias de la Iglesia en Chile',
+    route: '/noticias-iglesia-chile',
+    category: 'Noticias de la Iglesia',
+    keywords: ['noticias', 'iglesia', 'chile', 'actualidad', 'nacional']
+  },
+  {
+    title: 'Noticias de la Iglesia Santa Sede',
+    route: '/noticias-vaticano',
+    category: 'Noticias de la Iglesia',
+    keywords: ['noticias', 'iglesia', 'vaticano', 'santa sede', 'papa', 'actualidad', 'internacional']
+  },
+  
 
   // Liturgia de las horas
   
@@ -508,6 +565,12 @@ const searchData: SearchItem[] = [
   {
     title: 'Liturgia de las Horas del día en Audio',
     route: '/(app)/oficio-del-dia',
+    category: 'Liturgia de las horas',
+    keywords: ['laudes', 'completas', 'visperas', 'oracion de mañana', 'oracion de la noche', 'oracion de la tarde']
+  },
+  {
+    title: 'Liturgia de las Horas del día',
+    route: '/(app)/liturgia-horas-dia',
     category: 'Liturgia de las horas',
     keywords: ['laudes', 'completas', 'visperas', 'oracion de mañana', 'oracion de la noche', 'oracion de la tarde']
   },
@@ -612,12 +675,6 @@ const searchData: SearchItem[] = [
     route: '/oraciones-noche',
     category: 'Oraciones',
     keywords: ['noche', 'oraciones', 'completas', 'descanso']
-  },
-  {
-    title: 'Santo del Día',
-    route: '/santo',
-    category: 'Devociones',
-    keywords: ['santo', 'santos', 'devocion', 'ejemplo']
   },
   {
     title: 'Devociones al Espíritu Santo',
@@ -943,96 +1000,71 @@ const searchData: SearchItem[] = [
     category: 'Oraciones diversas',
     keywords: ['salud', 'espiritual', 'fisica']
   },
+  {
+    title: 'Consejos para el camino',
+    route: '/consejo-camino',
+    category: 'Vida cristiana',
+    keywords: ['consejos', 'camino', 'vida', 'cristiana', 'orientación', 'ayuda', 'espiritualidad']
+  },
 
 
 ];
 
+// Configuración de Fuse.js
+const fuse = new Fuse(searchData, {
+  keys: ['title', 'category', 'keywords'],
+  threshold: 0.35, // Ajusta la sensibilidad de la búsqueda
+  includeScore: true,
+});
+
 export default function BuscarScreen() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [suggestions, setSuggestions] = useState<SearchItem[]>([]);
-  const [isFocused, setIsFocused] = useState(false);
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState<SearchItem[]>(searchData);
 
   const handleSearch = useCallback((text: string) => {
-    setSearchQuery(text);
+    setQuery(text);
     if (text.trim() === '') {
-      setSuggestions([]);
+      setResults(searchData);
       return;
     }
-
-    const searchTerms = text.toLowerCase().split(' ');
-    const filtered = searchData.filter(item => {
-      const searchString = [
-        item.title.toLowerCase(),
-        item.category.toLowerCase(),
-        ...item.keywords
-      ].join(' ');
-
-      return searchTerms.every(term => searchString.includes(term));
-    });
-
-    setSuggestions(filtered);
+    const fuseResults = fuse.search(text);
+    setResults(fuseResults.map(r => r.item));
   }, []);
-
-  const handleSuggestionPress = (item: SearchItem) => {
-    setSearchQuery(item.title);
-    setSuggestions([]);
-    Keyboard.dismiss();
-    router.push(item.route);
-  };
 
   return (
     <>
-      <Stack.Screen
-        options={{
-          title: 'Buscar',
-          headerStyle: {
-            backgroundColor: Colors.primary
-          },
-          headerTintColor: Colors.white
-        }}
-      />
-      <View style={styles.container}>
-        <View style={styles.searchContainer}>
-          <Ionicons name="search" size={20} color={Colors.text} style={styles.searchIcon} />
-          <TextInput
-            style={styles.searchInput}
-            placeholder="Buscar oraciones, devociones..."
-            value={searchQuery}
-            onChangeText={handleSearch}
-            placeholderTextColor={Colors.text}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setTimeout(() => setIsFocused(false), 200)}
-          />
-          {searchQuery !== '' && (
-            <Pressable onPress={() => handleSearch('')} style={styles.clearButton}>
-              <Ionicons name="close-circle" size={20} color={Colors.text} />
-            </Pressable>
-          )}
-        </View>
-
-        {(isFocused || searchQuery !== '') && (
-          <ScrollView 
-            style={styles.suggestionsContainer}
-            keyboardShouldPersistTaps="handled"
-          >
-            {suggestions.map((item, index) => (
-              <Pressable
-                key={index}
-                style={styles.suggestionItem}
-                onPress={() => handleSuggestionPress(item)}
-              >
-                <Text style={styles.suggestionTitle}>{item.title}</Text>
-                <Text style={styles.suggestionCategory}>{item.category}</Text>
-              </Pressable>
-            ))}
-            {searchQuery !== '' && suggestions.length === 0 && (
-              <View style={styles.noResults}>
-                <Text style={styles.noResultsText}>No se encontraron resultados</Text>
-              </View>
-            )}
-          </ScrollView>
-        )}
+      <Stack.Screen options={{ title: 'Buscar' }} />
+      <View style={styles.searchContainer}>
+        <Ionicons name="search" size={22} color={Colors.primary} style={{ marginRight: 8 }} />
+        <TextInput
+          style={styles.input}
+          placeholder="Buscar cualquier palabra..."
+          value={query}
+          onChangeText={handleSearch}
+          autoFocus
+          autoCorrect
+          autoCapitalize="sentences"
+          clearButtonMode="while-editing"
+        />
       </View>
+      <ScrollView keyboardShouldPersistTaps="handled" style={styles.resultsContainer}>
+        {results.length === 0 && (
+          <Text style={styles.noResults}>No se encontraron resultados.</Text>
+        )}
+        {results.map((item, idx) => (
+          <Pressable
+            key={item.route + idx}
+            style={({ pressed }) => [styles.resultItem, pressed && { backgroundColor: Colors.primary + '22' }]}
+            onPress={() => {
+              Keyboard.dismiss();
+              router.push(item.route);
+            }}
+          >
+            <Text style={styles.resultTitle}>{item.title}</Text>
+            <Text style={styles.resultCategory}>{item.category}</Text>
+          </Pressable>
+        ))}
+      </ScrollView>
     </>
   );
 }
@@ -1105,6 +1137,41 @@ const styles = StyleSheet.create({
   },
   noResultsText: {
     fontSize: 16,
+    color: Colors.text,
+    opacity: 0.7,
+  },
+  input: {
+    flex: 1,
+    height: 50,
+    fontSize: 16,
+    color: Colors.text,
+  },
+  resultsContainer: {
+    flex: 1,
+    paddingHorizontal: 16,
+  },
+  resultItem: {
+    backgroundColor: Colors.white,
+    padding: 16,
+    borderRadius: 10,
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  resultTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: Colors.primary,
+    marginBottom: 4,
+  },
+  resultCategory: {
+    fontSize: 14,
     color: Colors.text,
     opacity: 0.7,
   },
