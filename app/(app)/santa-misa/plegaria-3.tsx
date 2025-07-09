@@ -44,19 +44,11 @@ export default function Plegaria3Page() {
 
           <Text style={styles.texto}>
             Porque él mismo,{"\n"}
-            llegada la hora en que había de ser glorificado{"\n"}
-            por ti, Padre santo,.{"\n"}
-            habiendo amado a los suyos{"\n"}
-            que estaban en el mundo,{"\n"}
-            los amó hasta el extremo.{"\n"}
-          </Text>
-
-          <Text style={styles.texto}>
-            Y, mientras cenaba con sus discípulos,{"\n"}
+            la noche que iba a ser entregado{"\n"}
             tomó pan,{"\n"}
-            te bendijo,{"\n"}
+            y dando gracias te bendijo,{"\n"}
             lo partió{"\n"}
-            y se lo dio, diciendo:{"\n"}
+            y se lo dio a sus discípulos, diciendo:{"\n"}
           </Text>
 
           <Text style={styles.textoNegrita}>

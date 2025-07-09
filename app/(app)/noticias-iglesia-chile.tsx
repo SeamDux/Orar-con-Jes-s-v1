@@ -44,10 +44,7 @@ export default function NoticiasIglesiaChileScreen() {
   // Función para limpiar HTML y dejar solo texto plano
   const stripHtml = (html: string): string => {
     if (!html) return '';
-    // Eliminar etiquetas HTML
-    const tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || '';
+    return html.replace(/<[^>]+>/g, '');
   };
 
   const fetchNoticias = async () => {
