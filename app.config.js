@@ -32,7 +32,7 @@ module.exports = {
     },
     android: {
       package: 'com.orarconjesus.app',
-      versionCode: 1,
+      versionCode: 4,
       adaptiveIcon: {
         foregroundImage: './assets/images/app-store-1024pt@1x.png',
         backgroundColor: '#ffffff'
@@ -41,7 +41,8 @@ module.exports = {
       softwareKeyboardLayoutMode: "pan",
       enableProguardInReleaseBuilds: true,
       enableHermes: true,
-      jsEngine: "hermes"
+      jsEngine: "hermes",
+      targetSdkVersion: 35
     },
     web: {
       favicon: './assets/images/favicon-32x32.png',
@@ -49,7 +50,17 @@ module.exports = {
     },
     plugins: [
       'expo-font',
-      'expo-router'
+      'expo-router',
+      [
+        'expo-build-properties',
+        {
+          android: {
+            compileSdkVersion: 35,
+            targetSdkVersion: 35,
+            buildToolsVersion: '35.0.0'
+          }
+        }
+      ]
     ],
     scheme: 'orarconjesus',
     experiments: {

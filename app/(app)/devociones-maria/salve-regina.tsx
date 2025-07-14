@@ -29,7 +29,7 @@ export default function SalveReginaScreen() {
           <Text style={styles.subtitulo}>En latín</Text>
 
           <Text style={styles.oracion}>
-            Salve, Regina, Mater miseri-córdiæ, vita, dulcédo et spes nostra, salve.{'\n'}
+            Salve, Regina, Mater misericórdiæ, vita, dulcédo et spes nostra, salve.{'\n'}
             Ad te clamámus, éxsules fílii Hevæ. Ad te suspirámus geméntes et flentes in hac lacrimárum valle.{'\n'}
             Eia ergo, advocáta nostra, illos tuos misericórdes óculos ad nos convérte.{'\n'}
             Et Iesum benedíctum fructum ventris tui, nobis, post hoc exsílium, osténde.{'\n'}
