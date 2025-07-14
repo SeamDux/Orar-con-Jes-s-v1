@@ -414,6 +414,12 @@ const searchData: SearchItem[] = [
     keywords: ['coronilla', 'misericordia', 'Jesucristo']
   },
   {
+    title: 'Mes del Sagrado Corazón de Jesús',
+    route: '/devociones/mes-sagrado-corazon',
+    category: 'Devociones a Nuestro Señor Jesucristo',
+    keywords: ['corazón', 'sagrado', 'Jesucristo']
+  },
+  {
     title: 'Vía Crucis',
     route: '/devociones/via-crucis',
     category: 'Devociones a Nuestro Señor Jesucristo',
