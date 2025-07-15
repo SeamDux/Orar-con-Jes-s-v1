@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -27,6 +27,12 @@ export default function BienaventuranzasScreen() {
               Las bienaventuranzas están en el centro de la predicación de Jesús. Con ellas Jesús recoge las promesas hechas al pueblo elegido desde Abraham; pero las perfecciona ordenándolas no sólo a la posesión de una tierra, sino al Reino de los cielos:
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=q6uqZByXZ7U', '_blank')}
+                              >
+            <Text style={styles.buttonText}>Saber más</Text>
+          </TouchableOpacity>
 
           <View style={styles.bienaventuranzaCard}>
             <Text style={styles.bienaventuranzaText}>
@@ -182,5 +188,19 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     textAlign: 'justify',
     fontStyle: 'italic',
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 

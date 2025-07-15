@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Pressable } from 'react-native';
+import { StyleSheet, ScrollView, Pressable, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack, useRouter } from 'expo-router';
@@ -85,6 +85,13 @@ export default function OrdinarioPage() {
           <Pressable style={styles.opcion} onPress={() => router.push('/santa-misa/plegaria-4')}>
             <Text style={styles.opcionTexto}>Plegaria Eucarística IV</Text>
           </Pressable>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://multimedia.opusdei.org/doc/pdf/Diìptico%20Eucaristiìa%20OD420230423225044294419.pdf', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Saber mas</Text>
+            </TouchableOpacity>
         </View>
       </ScrollView>
     </>
@@ -110,5 +117,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     fontWeight: 'bold',
+  },
+button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 

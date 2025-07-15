@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -42,6 +42,12 @@ export default function CantosEntradaScreen() {
               bajo tu amparo, oh, Madre mía, guárdenos siempre tu tierno amor.
             </Text>
           </View>
+            <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://youtu.be/vUp7Uq2guPk?si=rmCHvhL2jHTOV-83', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>2. Llegad hasta el Señor</Text>
@@ -60,6 +66,12 @@ export default function CantosEntradaScreen() {
               y al Espíritu que habita en nuestras almas.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=HVbKk-UWmwc', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>3. Juntos como hermanos</Text>
@@ -82,6 +94,12 @@ export default function CantosEntradaScreen() {
               Donde reinará la paz
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=R9SeI3Wqz94', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>4. Vienen con alegría</Text>
@@ -104,6 +122,12 @@ export default function CantosEntradaScreen() {
               Le aguardan la tristeza y el dolor
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=o13EntxXHW0', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>5. ¿Señor, quién entrará?</Text>
@@ -121,6 +145,12 @@ export default function CantosEntradaScreen() {
               tu Espíritu Santo inunda mi ser (bis)
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=W97nt1pQy3k', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>6. Christus heri et hodie</Text>
@@ -155,6 +185,12 @@ export default function CantosEntradaScreen() {
               Tu cambias nuestro llanto en fiesta y danza.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=vl8CtI-ZZYc', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
         </View>
       </ScrollView>
     </>
@@ -223,5 +259,19 @@ const styles = StyleSheet.create({
       fontStyle: 'italic',
       marginVertical: 12,
       textAlign: 'justify',
+  },
+button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 1,
+    marginBottom: 10,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 

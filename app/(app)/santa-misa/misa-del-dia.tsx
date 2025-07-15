@@ -15,6 +15,9 @@ export default function MisaDelDia() {
         <Text style={{ marginBottom: 10, textAlign: 'center', fontSize: 18, fontWeight: 'bold' }}>
           Misa del día
         </Text>
+        <Text style={{ marginBottom: 10, textAlign: 'justify', fontSize: 15, fontWeight: 'bold' }}>
+          En vivo por ISB todos los días a las 11.30 am y Domingo y días de Precepto a las 12.00 am 
+        </Text>
         <button
           style={{
             backgroundColor: '#007bff',
@@ -29,6 +32,21 @@ export default function MisaDelDia() {
           onClick={() => window.open('https://www.eucaristiadiaria.cl/dia.php', '_blank')}
         >
           Ir a eucaristiadiaria.cl
+        </button>
+        <button
+          style={{
+            backgroundColor: '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: 6,
+            padding: '10px 20px',
+            fontSize: 16,
+            cursor: 'pointer',
+            marginBottom: 16,
+          }}
+          onClick={() => window.open('https://www.canalisb.cl', '_blank')}
+        >
+          Ir a Canal ISB
         </button>
         <div style={{ width: '100%', maxWidth: 600, height: 1200, marginTop: 20 }}>
           <iframe

@@ -12,6 +12,11 @@ const oraciones: Oracion[] = [
     texto: 'Por la señal de la Santa Cruz, de nuestros enemigos líbranos Señor, Dios nuestro.\n\nEn el nombre del Padre, y del Hijo, y del Espíritu Santo.\nAmén.'
   },
   {
+    id: 'acto-contricion',
+    titulo: 'Acto de Contrición',
+    texto: 'Señor mío Jesucristo, Dios y hombre verdadero, Creador, Padre y Redentor mío: por ser Tu quien eres, Bondad infinita, y porque te amo sobre todas las cosas, me pesa de todo corazón haberte ofendido. También me pesa que puedas castigarme con las penas del infierno. Ayudado de Tu divina gracia, propongo firmemente nunca más pecar, confesarme y cumplir la penitencia que me fuera impuesta. Amén'
+  },
+  {
     id: 'ofrecimiento-obras',
     titulo: 'Ofrecimiento de Obras del día',
     texto: 'Sagrado Corazón de Jesús, por medio del Corazón Inmaculado de María Santísima, yo me consagro a ti, y contigo me ofrezco a Dios Padre en el Santo Sacrificio del Altar, con todos mis trabajos, oraciones, sufrimientos y alegrías de este día, en reparación por nuestros pecados, y para que venga a nosotros tu reino. Amén.'
@@ -112,6 +117,13 @@ export default function OracionesScreen() {
               ) :
               oracion.id === 'ave-maria' ? (
                 <Link key={oracion.id} href="/(app)/oraciones-siempre/ave-maria" asChild>
+                  <TouchableOpacity style={styles.oracionItem}>
+                    <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
+                  </TouchableOpacity>
+                </Link>
+              ) :
+              oracion.id === 'acto-contricion' ? (
+                <Link key={oracion.id} href="/(app)/oraciones-siempre/acto-contricion" asChild>
                   <TouchableOpacity style={styles.oracionItem}>
                     <Text style={styles.oracionItemTitulo}>{oracion.titulo}</Text>
                   </TouchableOpacity>

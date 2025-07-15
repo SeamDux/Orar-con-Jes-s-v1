@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -33,6 +33,12 @@ export default function VirtudesCardinalesScreen() {
               Las virtudes morales crecen mediante la educación, mediante actos deliberados y con el esfuerzo perseverante. La gracia divina las purifica y las eleva. Pueden agruparse en torno a las cuatro virtudes cardinales: prudencia, justicia, fortaleza y templanza.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=4FAW85oc6iQ', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Saber más</Text>
+            </TouchableOpacity>
 
           <View style={styles.virtudCard}>
             <Text style={styles.virtudTitle}>Prudencia:</Text>
@@ -89,6 +95,20 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     alignItems: 'center',
+  },
+button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
   title: {
     fontSize: 24,

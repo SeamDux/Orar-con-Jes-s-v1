@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -37,6 +37,12 @@ export default function MandamientosScreen() {
               Las "diez palabras" resumen y proclaman la ley de Dios: "Estas palabras dijo el Señor a toda vuestra asamblea, en la montaña, de en medio del fuego, la nube y la densa niebla, con voz potente, y nada más añadió. Luego las escribió en dos tablas de piedra y me las entregó a mí" (Dt 5, 22). Por eso estas dos tablas son llamadas "el Testimonio" (Ex 25, 16), pues contienen las cláusulas de la Alianza establecida entre Dios y su pueblo. Estas "tablas del Testimonio" (Ex 31, 18; 32, 15; 34, 29) se debían depositar en el "arca" (Ex 25, 16; 40, 1-2). (CEC 2057)
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://youtube.com/playlist?list=PLDFmwHW6wkBpAqWwFwUurKyHUywbxgTuC&si=VFI3xNNOTRpg0vYO', '_blank')}
+                              >
+            <Text style={styles.buttonText}>Saber más</Text>
+          </TouchableOpacity>
 
           <View style={styles.sectionCard}>
             <Text style={styles.sectionTitle}>La Iglesia y los diez Mandamientos</Text>
@@ -194,5 +200,19 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     paddingLeft: 15,
     lineHeight: 24,
+  },
+button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 

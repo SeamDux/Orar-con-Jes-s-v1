@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -27,6 +27,12 @@ export default function VirtudesTeologalesScreen() {
               Las virtudes teologales se refieren directamente a Dios. Disponen a los cristianos a vivir en relación con la Santísima Trinidad. Tienen como origen, motivo y objeto, a Dios conocido por la fe, esperado y amado por Él mismo. Fundan, animan y caracterizan el obrar moral del cristiano. Informan y vivifican todas las virtudes morales. Son infundidas por Dios en el alma de los fieles para hacerlos capaces de obrar como hijos suyos y merecer la vida eterna. Son la garantía de la presencia y la acción del Espíritu Santo en las facultades del ser humano.
             </Text>
           </View>
+            <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=6jI5yH8loz8', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Saber más</Text>
+            </TouchableOpacity>
 
           <View style={styles.virtudCard}>
             <Text style={styles.virtudTitle}>Fe:</Text>
@@ -96,6 +102,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+    button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
   virtudCard: {
     backgroundColor: Colors.white,
