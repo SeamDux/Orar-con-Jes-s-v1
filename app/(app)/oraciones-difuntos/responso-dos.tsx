@@ -96,12 +96,7 @@ export default function ResponsoDosScreen() {
             </Text>
           </View>
 
-          <Pressable 
-            style={styles.button}
-            onPress={() => router.push('/oraciones-difuntos')}
-          >
-            <Text style={styles.buttonText}>Volver al listado</Text>
-          </Pressable>
+          
         </View>
       </ScrollView>
     </>

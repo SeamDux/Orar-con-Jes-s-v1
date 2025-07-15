@@ -23,7 +23,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Primera estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              1ª Estación: <Text style={styles.estacionTitleRed}>Jesús sentenciado a muerte</Text>
+              1ª Estación: <Text style={styles.estacionTitle}>Jesús sentenciado a muerte</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Sentenciado y no por un tribunal, sino por todos. Condenado por los mismos que le habían aclamado poco antes. Y Él calla... Nosotros huimos de ser reprochados. Y saltamos inmediatamente...
@@ -39,7 +39,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Segunda estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              2ª Estación: <Text style={styles.estacionTitleRed}>Jesús cargado con la cruz</Text>
+              2ª Estación: <Text style={styles.estacionTitle}>Jesús cargado con la cruz</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Que yo comprenda, Señor, el valor de la cruz, de mis pequeñas cruces de cada día, de mis achaques, de mis dolencias, de mi soledad.
@@ -55,7 +55,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Tercera estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              3ª Estación: <Text style={styles.estacionTitleRed}>Jesús cae, por primera vez, bajo el paso de la cruz</Text>
+              3ª Estación: <Text style={styles.estacionTitle}>Jesús cae, por primera vez, bajo el paso de la cruz</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Tú caes, Señor, para redimirme. Para ayudarme a levantarme en mis caídas diarias, cuando después de haberme propuesto ser fiel, vuelvo a reincidir en mis defectos cotidianos. ¡Ayúdame a levantarme siempre y a seguir mi camino hacia Ti! Señor, pequé, ten piedad y misericordia de mí.
@@ -68,7 +68,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Cuarta estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              4ª Estación: <Text style={styles.estacionTitleRed}>Encuentro con la Virgen</Text>
+              4ª Estación: <Text style={styles.estacionTitle}>Encuentro con la Virgen</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Haz Señor, que me encuentre al lado de tu Madre en todos los momentos de mi vida.
@@ -84,7 +84,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Quinta estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              5ª Estación: <Text style={styles.estacionTitleRed}>el Cirineo ayuda al Señor a llevar la Cruz</Text>
+              5ª Estación: <Text style={styles.estacionTitle}>el Cirineo ayuda al Señor a llevar la Cruz</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Cada uno de nosotros tenemos nuestra vocación, hemos venido al mundo para algo concreto, para realizarnos de una manera particular.
@@ -100,7 +100,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Sexta estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              6ª Estación: <Text style={styles.estacionTitleRed}>la Verónica enjuga el rostro de Jesús</Text>
+              6ª Estación: <Text style={styles.estacionTitle}>la Verónica enjuga el rostro de Jesús</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Es la mujer valiente, decidida, que se acerca a Ti cuando todos te abandonan. Yo, Señor, te abandono cuando me dejo llevar por el "qué dirán", del respeto humano, cuando no me atrevo a defender al prójimo ausente, cuando no me atrevo a replicar una broma que ridiculiza a los que tratan de acercarse a Ti.
@@ -116,7 +116,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Séptima estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              7ª Estación: <Text style={styles.estacionTitleRed}>Segunda caída en el camino de la Cruz</Text>
+              7ª Estación: <Text style={styles.estacionTitle}>Segunda caída en el camino de la Cruz</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Caes, Señor, por segunda vez. El Vía Crucis nos señala tres caídas en tu caminar hacia el Calvario. Tal vez fueran más.
@@ -132,7 +132,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Octava estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              8ª Estación: <Text style={styles.estacionTitleRed}>Jesús consuela a las hijas de Jerusalén</Text>
+              8ª Estación: <Text style={styles.estacionTitle}>Jesús consuela a las hijas de Jerusalén</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Muchas veces, tendría yo que analizar la causa de mis lágrimas. Al menos, de mis pesares, de mis preocupaciones. Tal vez hay en ellos un fondo de orgullo, de amor propio mal entendido, de egoísmo, de envidia.
@@ -148,7 +148,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Novena estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              9ª Estación: <Text style={styles.estacionTitleRed}>Jesús cae por tercera vez</Text>
+              9ª Estación: <Text style={styles.estacionTitle}>Jesús cae por tercera vez</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Tercera caída. Más cerca de la Cruz. Más agotado, más falto de fuerzas. Caes desfallecido, Señor.
@@ -164,7 +164,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Décima estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              10ª Estación: <Text style={styles.estacionTitleRed}>Jesús despojado de sus vestiduras</Text>
+              10ª Estación: <Text style={styles.estacionTitle}>Jesús despojado de sus vestiduras</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Arrancan tus vestiduras, adheridas a Ti por la sangre de tus heridas. A infinita distancia de tu dolor, yo he sentido, a veces, cómo algo se arrancaba dolorosamente de mí por la pérdida de mis seres queridos.
@@ -180,7 +180,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Undécima estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              11ª Estación: <Text style={styles.estacionTitleRed}>Jesús es clavado en la Cruz</Text>
+              11ª Estación: <Text style={styles.estacionTitle}>Jesús es clavado en la Cruz</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu Santa Cruz redimiste al mundo.</Text> Señor, que yo disminuya mis limitaciones con mi esfuerzo y así pueda ayudar a mis hermanos. Y que cuando mi esfuerzo no consiga disminuirlas, me esfuerce en ofrecértelas también por ellos. Señor, pequé, ten piedad y misericordia de mí.
@@ -193,7 +193,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Duodécima estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              12ª Estación: <Text style={styles.estacionTitleRed}>Jesús muere en la Cruz</Text>
+              12ª Estación: <Text style={styles.estacionTitle}>Jesús muere en la Cruz</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Te adoro, mi Señor, muerto en la Cruz por Salvarme. Te adoro y beso tus llagas, las heridas de los clavos, la lanzada del costado... ¡Gracias, Señor, gracias! Has muerto por salvarme, por salvarnos.
@@ -209,7 +209,7 @@ export default function ViaCrucisBreveScreen() {
           {/* Decimotercera estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              13ª Estación: <Text style={styles.estacionTitleRed}>Jesús en brazos de su madre</Text>
+              13ª Estación: <Text style={styles.estacionTitle}>Jesús en brazos de su madre</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Déjame estar a tu lado, Madre, especialmente en estos momentos de tu dolor incomparable. Déjame estar a tu lado. Más te pido: que hoy y siempre me tengas cerca de Ti y te compadezcas de mí.
@@ -225,13 +225,13 @@ export default function ViaCrucisBreveScreen() {
           {/* Decimocuarta estación */}
           <View style={styles.estacionCard}>
             <Text style={styles.estacionTitle}>
-              14ª Estación: <Text style={styles.estacionTitleRed}>Jesús puesto en el sepulcro</Text>
+              14ª Estación: <Text style={styles.estacionTitle}>Jesús puesto en el sepulcro</Text>
             </Text>
             <Text style={styles.text}>
               <Text style={styles.bold}>Te adoramos, Señor, y te bendecimos, porque por tu santa cruz redimiste al mundo.</Text> Todo ha terminado. Pero no: después de la muerte, la Resurrección.
             </Text>
             <Text style={styles.text}>
-              Enséñame a ver lo que pasa, lo transitorio y pasajero, a la luz e lo que no pasa. Y que esa luz ilumine todos mis actos. Así sea. Señor, pequé, ten piedad y misericordia de mí.
+              Enséñame a ver lo que pasa, lo transitorio y pasajero, a la luz de lo que no pasa. Y que esa luz ilumine todos mis actos. Así sea. Señor, pequé, ten piedad y misericordia de mí.
             </Text>
             <Text style={styles.finalPrayer}>
               Padre Nuestro, Ave María y Gloria...
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 8,
-    color: Colors.primary,
+    color: Colors.text,
   },
   estacionTitleRed: {
     color: 'darkred',

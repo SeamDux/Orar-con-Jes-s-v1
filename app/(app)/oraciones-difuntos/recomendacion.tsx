@@ -31,9 +31,8 @@ export default function RecomendacionScreen() {
           </View>
 
           <View style={styles.seccion}>
-            <Text style={styles.subtitulo}>1.</Text>
             <Text style={styles.texto}>
-              Alma cristiana, al salir de este mundo,{"\n"}
+              1. Alma cristiana, al salir de este mundo,{"\n"}
               marcha en el nombre de Dios Padre todopoderoso,{"\n"}
               que te creó;{"\n"}
               en el nombre de Jesucristo, Hijo de Dios vivo,{"\n"}
@@ -50,9 +49,8 @@ export default function RecomendacionScreen() {
           </View>
 
           <View style={styles.seccion}>
-            <Text style={styles.subtitulo}>2.</Text>
             <Text style={styles.texto}>
-              Hermano(a) mío(a),{"\n"}
+              2. Hermano(a) mío(a),{"\n"}
               te pongo en manos de Dios todopoderoso,{"\n"}
               para que vuelvas al mismo que te creó{"\n"}
               y te formó del polvo de la tierra.{"\n"}
@@ -74,9 +72,8 @@ export default function RecomendacionScreen() {
           </View>
 
           <View style={styles.seccion}>
-          <Text style={styles.subtitulo}>3.</Text>
             <Text style={styles.texto}>
-              V. Dale, Señor, a tu hijo(a) la eterna salvación que espera{"\n"}
+              3. V. Dale, Señor, a tu hijo(a) la eterna salvación que espera{"\n"}
               de tu misericordia. Amén.{"\n\n"}
               V. Salva, Señor, a tu hijo(a) de todas las tribulaciones.{"\n"}
               Amén.{"\n\n"}

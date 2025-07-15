@@ -100,12 +100,7 @@ export default function LecturasScreen() {
             </Text>
           </View>
 
-          <Pressable 
-            style={styles.button}
-            onPress={() => router.replace('/(app)/oraciones-difuntos')}
-          >
-            <Text style={styles.buttonText}>Volver al listado</Text>
-          </Pressable>
+          
         </View>
       </ScrollView>
     </>
