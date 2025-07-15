@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Pressable } from 'react-native';
+import { StyleSheet, ScrollView, Pressable, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack, router } from 'expo-router';
@@ -25,6 +25,13 @@ export default function ExorcismosScreen() {
               Súplicas que pueden utilizar privadamente los fieles en la lucha contra el poder de las tinieblas
             </Text>
           </View>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_1999-01-26_il-rito-degli-esorcismi_sp.html', '_blank')}
+              >
+            <Text style={styles.buttonText}>El nuevo rito de los Exorcismos</Text>
+          </TouchableOpacity>
 
           <View style={styles.seccion}>
             <Text style={styles.subtitulo}>ORACIONES</Text>

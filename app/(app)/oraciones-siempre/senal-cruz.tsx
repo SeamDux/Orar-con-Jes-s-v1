@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   prayer: {
-    fontSize: 20,
+    fontSize: 18,
     lineHeight: 30,
     textAlign: 'justify',
     marginBottom: 20,

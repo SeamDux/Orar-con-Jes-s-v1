@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
-import { Stack } from 'expo-router';
+import { Stack, Link } from 'expo-router';
 
 export default function MandamientosIglesiaScreen() {
   return (
@@ -36,6 +36,11 @@ export default function MandamientosIglesiaScreen() {
             <Text style={styles.text}>
               Exige a los fieles participar en la celebración eucarística, en la que se reúne la comunidad cristiana, el día en que se conmemora la Resurrección del Señor, y en aquellas principales fiestas litúrgicas que conmemoran los misterios del Señor, la Virgen María y los santos.
             </Text>
+            <Link href="/santa-misa" asChild>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Ir a la Santa Misa</Text>
+              </TouchableOpacity>
+            </Link>
           </View>
 
           <View style={styles.mandamientoCard}>
@@ -43,6 +48,11 @@ export default function MandamientosIglesiaScreen() {
             <Text style={styles.text}>
               Asegura la preparación para la Eucaristía mediante la recepción del sacramento de la Reconciliación, que continúa la obra de conversión y de perdón del Bautismo.
             </Text>
+            <Link href="/confesion/confesion" asChild>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Ir a la Confesión</Text>
+              </TouchableOpacity>
+            </Link>
           </View>
 
           <View style={styles.mandamientoCard}>
@@ -50,6 +60,11 @@ export default function MandamientosIglesiaScreen() {
             <Text style={styles.text}>
               Garantiza un mínimo en la recepción del Cuerpo y la Sangre del Señor en relación con el tiempo de Pascua, origen y centro de la liturgia cristiana.
             </Text>
+            <Link href="/santa-misa/accion-gracias" asChild>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Ir a la Comunión</Text>
+              </TouchableOpacity>
+            </Link>
           </View>
 
           <View style={styles.mandamientoCard}>
@@ -57,6 +72,11 @@ export default function MandamientosIglesiaScreen() {
             <Text style={styles.text}>
               Asegura los tiempos de ascesis y de penitencia que nos preparan para las fiestas litúrgicas; contribuyen a hacernos adquirir el dominio sobre nuestros instintos y la libertad del corazón.
             </Text>
+            <Link href="/vida-cristiana/penitencia" asChild>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Ver sobre el ayuno y la abstinencia</Text>
+              </TouchableOpacity>
+            </Link>
           </View>
 
           <View style={styles.mandamientoCard}>
@@ -64,6 +84,9 @@ export default function MandamientosIglesiaScreen() {
             <Text style={styles.text}>
               Señala la obligación de ayudar, cada uno según su capacidad, a cubrir las necesidades materiales de la Iglesia. En Chile la Iglesia ha establecido que todos los fieles que reciben ingresos de cualquier naturaleza deben entregar para las obras de la Iglesia el 1% de sus ingresos. Esto se llama "el uno por ciento". Es la respectiva parroquia.
             </Text>
+            <TouchableOpacity style={styles.button} onPress={() => window.open('https://unoporcientosanbernardo.cl', '_blank')}>
+              <Text style={styles.buttonText}>Ir al sitio del 1%</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -141,5 +164,19 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     lineHeight: 24,
     textAlign: 'justify',
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 

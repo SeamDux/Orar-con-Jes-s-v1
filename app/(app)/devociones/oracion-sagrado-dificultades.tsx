@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -20,6 +20,12 @@ export default function OracionSagradoDificultadesScreen() {
         <View style={styles.content}>
           <Text style={styles.title}>Oración al Sagrado Corazón ante las dificultades</Text>
           <Text style={styles.author}>San Claudio de la Colombiere</Text>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.corazones.org/santos/claudio_colombiere.htm', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Conoce más sobre San Claudio de la Colombiere</Text>
+            </TouchableOpacity>
           <Text style={styles.context}>
             Sacerdote jesuita a quien el propio Sagrado Corazón de Jesús eligió para impulsar la propagación de esta devoción. Un día el santo escribió una profunda oración ante las dificultades.
           </Text>
@@ -76,6 +82,20 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 20,
     fontStyle: 'italic',
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
   prayer: {
     fontSize: 18,

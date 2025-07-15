@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Stack } from 'expo-router';
 import Colors from '../../../constants/Colors';
 
@@ -18,6 +18,12 @@ export default function AcordaosScreen() {
       <ScrollView style={styles.container}>
         <View style={styles.content}>
           <Text style={styles.titulo}>Acordaos (Oración de San Bernardo)</Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => window.open('https://www.vaticannews.va/es/santos/08/20/s--bernardo--abad-y-doctor-de-la-iglesia.html', '_blank')}
+                            >
+          <Text style={styles.buttonText}>San Bernardo de Claraval</Text>
+        </TouchableOpacity>
           
           <Text style={styles.texto}>
             El Acordaos - oración atribuida a San Bernardo de Claraval- es la mejor oración para manifestar nuestra confianza en la Virgen María, pues Ella es Madre clementísima; una Madre que está siempre pendiente de sus hijos, y está más, si cabe, de sus hijos. Es la súplica de un hijo que se ve necesitado de los cuidados maternales de María para vencer las tentaciones del enemigo. Un hijo que ruega e implora humildemente, reconociéndose indigno y pecador, la protección siempre poderosa de la Madre de Dios, para que en ningún momento le deje solo. Un hijo que sabe que sin la ayuda de la Virgen no es capaz de salir victorioso en las batallas que tiene que luchar durante esta vida para alcanzar la gloria del Cielo.
@@ -87,5 +93,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
     color: '#000000',
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 

@@ -1,14 +1,10 @@
-import { View, Text, StyleSheet, ImageBackground, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Stack } from 'expo-router';
 import { Colors } from '@/constants/Colors';
 
 export default function MesSagradoCorazon() {
   return (
-    <ImageBackground 
-      source={require('@/assets/images/sagrado-corazonv1.jpg')} 
-      style={styles.backgroundImage}
-      resizeMode="cover"
-    >
+    <View style={{ flex: 1 }}>
       <Stack.Screen
         options={{
           title: 'Mes del Sagrado Corazón',
@@ -22,13 +18,10 @@ export default function MesSagradoCorazon() {
           },
         }}
       />
-      
       <ScrollView style={styles.container}>
         <View style={styles.overlay}>
           <View style={styles.content}>
-            <Text style={[styles.title, { marginTop: 70 }]}>
-              Oración para todos los días del mes
-            </Text>
+            <Text style={[styles.title, { marginTop: 70 }]}>Oración para todos los días del mes</Text>
             <Text style={styles.text}>
               Rendido a vuestros pies, ¡oh Jesús mío!, considerando las inefables muestras de amor que me habéis dado y las sublimes lecciones que me enseña de continuo vuestro adorabilísimo Corazón, os pido humildemente la gracia de conoceros, amaros y serviros como fiel dicípulo vuestro para hacerme digno de las mercedes y bendiciones que, generoso, concedéis a los que de veras os conocen, aman y sirven.
               {'\n\n'}
@@ -66,14 +59,11 @@ export default function MesSagradoCorazon() {
           </View>
         </View>
       </ScrollView>
-    </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-  },
   container: {
     flex: 1,
   },

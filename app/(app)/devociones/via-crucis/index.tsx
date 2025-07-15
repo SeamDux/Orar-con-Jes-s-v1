@@ -51,6 +51,13 @@ export default function ViaCrucisScreen() {
           </Text>
 
           <TouchableOpacity
+            style={styles.bioButton}
+            onPress={() => window.open('https://stjosemaria.org/biography/', '_blank')}
+          >
+            <Text style={styles.prepButtonText}>Biografía de San Josemaría Escrivá</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
             style={styles.prepButton}
             onPress={() => router.push('/devociones/via-crucis/oracion-preparatoria')}
           >
@@ -158,5 +165,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     letterSpacing: 1,
+  },
+  bioButton: {
+    backgroundColor: Colors.primary,
+    borderRadius: 25,
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    marginBottom: 16,
+    marginTop: 0,
+    alignSelf: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 2.0,
+    elevation: 3,
   },
 }); 

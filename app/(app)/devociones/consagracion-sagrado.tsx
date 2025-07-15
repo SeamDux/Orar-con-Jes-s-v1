@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Stack } from 'expo-router';
 import Colors from '../../../constants/Colors';
 
@@ -19,6 +19,12 @@ export default function ConsagracionSagradoScreen() {
         <View style={styles.content}>
           <Text style={styles.titulo}>Consagración al Sagrado Corazón de Jesús</Text>
           <Text style={styles.autor}>Sta. Margarita María de Alacoque</Text>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.corazones.org/santos/margarita_maria_alacoque.htm', '_blank')}
+          >
+            <Text style={styles.buttonText}>Conoce más sobre Sta. Margarita María</Text>
+          </TouchableOpacity>
           
           <Text style={styles.oracion}>
             "Me entrego, y al Sagrado Corazón de Nuestro Señor Jesucristo consagro sin reservas, mi persona, mi vida, mis obras, mis dolores y sufrimientos. Me comprometo a no usar parte alguna de mi ser sino es para honrar, amar y glorificar al Sagrado Corazón. Este es mi propósito inmutable: ser enteramente suyo y hacer todas las cosas por su amor. Al mismo tiempo renuncio de todo corazón a todo aquello que le desagrade.
@@ -86,5 +92,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
     color: '#000000',
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 
