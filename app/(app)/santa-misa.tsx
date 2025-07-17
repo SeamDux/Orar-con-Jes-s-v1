@@ -79,6 +79,6 @@ const styles = StyleSheet.create({
   menuText: {
     marginLeft: 10,
     fontSize: 18,
-    color: Colors.primary,
+    color: Colors.secondary,
   },
 }); 

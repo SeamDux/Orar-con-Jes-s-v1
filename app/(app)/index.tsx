@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
   menuText: {
     fontSize: 20,
     marginLeft: 15,
-    color: Colors.primary,
+    color: Colors.secondary,
     flex: 1,
   },
   searchButton: {
