@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -59,6 +59,12 @@ export default function CantosComunionScreen() {
               tú eres el remedio, del que va a morir.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=f64d3GrVDPI&list=PLn0bdOqKV4pCwipMYlIc-kdVfQ17Wxwcf&index=4', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+          </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>3. El Profeta (Jeremías 1, 4)</Text>
@@ -79,6 +85,12 @@ export default function CantosComunionScreen() {
               está... (CORO)
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=mnrPH9IJOFc', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+          </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>4. Cristo te necesita</Text>
@@ -97,6 +109,12 @@ export default function CantosComunionScreen() {
               dale amor (bis)
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=jwOlP3mm_3g', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+          </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>5. Vaso nuevo</Text>
@@ -111,6 +129,12 @@ export default function CantosComunionScreen() {
               perdóname, Señor, pues te amo y nunca te olvidaré.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=94mPOZRkiFs', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+          </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>6. Alma misionera</Text>
@@ -189,4 +213,18 @@ const styles = StyleSheet.create({
   italic: {
     fontStyle: 'italic',
   },
+  button: {
+      backgroundColor: Colors.primary,
+      borderRadius: 8,
+      paddingVertical: 12,
+      paddingHorizontal: 20,
+      alignItems: 'center',
+      marginTop: 1,
+      marginBottom: 10,
+    },
+    buttonText: {
+      color: Colors.white,
+      fontWeight: 'bold',
+      fontSize: 16,
+    },
 }); 

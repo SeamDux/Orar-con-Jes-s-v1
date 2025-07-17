@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -212,5 +212,19 @@ const styles = StyleSheet.create({
   },
   italic: {
     fontStyle: 'italic',
+  },
+button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 1,
+    marginBottom: 10,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 

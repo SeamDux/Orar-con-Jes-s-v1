@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -37,6 +37,12 @@ export default function CantosOfertorioScreen() {
               Y por la salud del mundo.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://youtu.be/pnxHrbYRrJ8?si=jKbXJCTRVrnNEcvu', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+          </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>2. Padre nuestro recibid</Text>
@@ -59,6 +65,12 @@ export default function CantosOfertorioScreen() {
               siempre y en todo lugar.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://youtu.be/6yuLB-uL9L4?si=UbfCx3Pv5bBcEYnL', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+          </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>3. Recibe oh Dios</Text>
@@ -77,6 +89,12 @@ export default function CantosOfertorioScreen() {
               por todo el mundo, por su salvación.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=V2k1bx6UJz8', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+          </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>4. Te presentamos</Text>
@@ -93,6 +111,12 @@ export default function CantosOfertorioScreen() {
               <Text style={styles.italic}>Te presentamos el vino y el pan</Text>
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => window.open('https://www.youtube.com/watch?v=B281oFYllbQ', '_blank')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </>
@@ -154,5 +178,19 @@ const styles = StyleSheet.create({
   },
   italic: {
     fontStyle: 'italic',
+  },
+button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginTop: 1,
+    marginBottom: 10,
+  },
+  buttonText: {
+    color: Colors.white,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 }); 
