@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, ScrollView, View } from 'react-native';
 import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import { MaterialCommunityIcons, Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
 export default function HomePage() {
@@ -233,13 +233,22 @@ export default function HomePage() {
               <Text style={styles.menuText}>Cantoral Breve</Text>
             </TouchableOpacity>
           </Link>
+          {/* Espacio extra para que no tape los botones flotantes */}
+          <View style={{ height: 100 }} />
         </ScrollView>
       
-      <Link href="/(app)/buscar" asChild>
-        <TouchableOpacity style={styles.searchButton}>
-          <Ionicons name="search" size={24} color="white" />
+      {/* Barra de botones flotantes */}
+      <View style={styles.fabBar}>
+        <TouchableOpacity style={styles.fabButton} onPress={() => router.push('/(app)/acerca-de')}>
+          <MaterialCommunityIcons name="information-outline" size={28} color={Colors.primary} />
         </TouchableOpacity>
-      </Link>
+        <TouchableOpacity style={[styles.fabButton, styles.fabButtonCenter]} onPress={() => router.push('/(app)/buscar')}>
+          <Ionicons name="search" size={32} color={Colors.white} />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.fabButton} onPress={() => router.push('/(tabs)/donaciones')}>
+          <FontAwesome5 name="hand-holding-heart" size={26} color={Colors.primary} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -295,5 +304,54 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+  fabBar: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 24,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    zIndex: 100,
+    paddingHorizontal: 24,
+  },
+  fabButton: {
+    backgroundColor: Colors.white,
+    borderRadius: 32,
+    width: 56,
+    height: 56,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    elevation: 6,
+  },
+  fabButtonCenter: {
+    backgroundColor: Colors.primary,
+    width: 68,
+    height: 68,
+    borderRadius: 34,
+    marginHorizontal: 12,
+    borderWidth: 4,
+    borderColor: Colors.white,
+    top: -16,
+    zIndex: 101,
+  },
+  creditosIcon: {
+    position: 'absolute',
+    top: 36,
+    right: 24,
+    zIndex: 200,
+    backgroundColor: Colors.white,
+    borderRadius: 20,
+    padding: 6,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.10,
+    shadowRadius: 4,
+    elevation: 3,
   },
 }); 

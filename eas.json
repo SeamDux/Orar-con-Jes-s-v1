@@ -3,6 +3,9 @@
     "preview": {
       "android": {
         "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true
       }
     },
     "preview2": {
@@ -11,15 +14,35 @@
       }
     },
     "preview3": {
-      "developmentClient": true
+      "developmentClient": true,
+      "ios": {
+        "developmentClient": true,
+        "simulator": true
+      }
     },
     "preview4": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "ios": {
+        "distribution": "internal"
+      }
     },
-    "production": {},
+    "production": {
+      "ios": {
+        "buildType": "release"
+      }
+    },
     "app-bundle": {
       "android": {
         "buildType": "app-bundle"
+      }
+    },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "developmentClient": true,
+        "distribution": "internal",
+        "simulator": true
       }
     }
   }

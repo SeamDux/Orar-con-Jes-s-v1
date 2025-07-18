@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { BackHandler, Platform, View, Text, LogBox, TouchableOpacity } from 'react-native';
 import Colors from '../../constants/Colors';
 import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 // Ignorar advertencias específicas si es necesario
 LogBox.ignoreLogs([
@@ -90,13 +91,13 @@ export default function AppLayout() {
             headerShown: true,
             headerRight: () => (
               <TouchableOpacity 
-                onPress={() => router.push('/(app)/acerca-de')}
+                onPress={() => router.push('/(app)/creditos')}
                 style={{
                   marginRight: 16,
                   padding: 4,
                 }}
               >
-                <MaterialIcons name="info-outline" size={24} color="white" />
+                <MaterialCommunityIcons name="star" size={26} color="white" />
               </TouchableOpacity>
             ),
           }} 
