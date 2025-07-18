@@ -18,7 +18,7 @@ export const Colors = {
   error: '#c23616',
   card: '#ffffff',
   light: {
-    text: '#E0B400',
+    text: '#444444',
     background: '#fff',
     tint: tintColorLight,
     icon: '#687076',

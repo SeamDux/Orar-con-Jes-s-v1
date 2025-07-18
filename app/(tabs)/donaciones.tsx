@@ -29,7 +29,8 @@ export default function DonacionesScreen() {
         <Text style={styles.title}>Apoya este proyecto</Text>
         <Text style={styles.gracias}>¡Gracias por tu generosidad!</Text>
         <Text style={styles.texto}>
-          Si este proyecto te ha ayudado y quieres colaborar para que siga creciendo, puedes hacer una donación voluntaria. Todo aporte ayuda a mantener y mejorar la aplicación.
+          Si este proyecto te ha ayudado y quieres colaborar para que siga creciendo, 
+          puedes hacer una donación voluntaria. Todo aporte ayuda a mantener y mejorar la aplicación.
         </Text>
         <TouchableOpacity style={styles.botonDonar}>
           <Text style={styles.textoBotonDonar}>Donar</Text>

@@ -17,7 +17,7 @@ export default function LecturasScreen() {
           headerTintColor: Colors.white,
           headerLeft: () => (
             <Pressable 
-              onPress={() => router.push('/oraciones-difuntos')}
+              onPress={() => router.back()}
               style={{ marginLeft: 16 }}
             >
               <Ionicons name="arrow-back" size={24} color={Colors.white} />

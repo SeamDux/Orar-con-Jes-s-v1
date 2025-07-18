@@ -108,13 +108,6 @@ export default function RecomendacionScreen() {
               Para terminar se puede rezar la <Text style={styles.italic}>Salve Regina</Text>.
             </Text>
           </View>
-
-          <Pressable 
-            style={styles.button}
-            onPress={() => router.replace('/(app)/oraciones-difuntos')}
-          >
-            <Text style={styles.buttonText}>Volver al listado</Text>
-          </Pressable>
         </View>
       </ScrollView>
     </>

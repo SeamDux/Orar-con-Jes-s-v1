@@ -371,7 +371,7 @@ export default function SieteDomingosSanJoseScreen() {
       <>
         {secciones.map((seccion, index) => (
           <View key={index} style={styles.sectionCard}>
-            <ThemedText type="subtitle">{seccion.titulo}</ThemedText>
+            <ThemedText type="subtitle" style={{ color: Colors.secondary }}>{seccion.titulo}</ThemedText>
             <Text style={styles.prayer}>{seccion.contenido}</Text>
           </View>
         ))}
@@ -414,7 +414,7 @@ export default function SieteDomingosSanJoseScreen() {
               </View>
               
               <View style={styles.sectionCard}>
-                <ThemedText type="subtitle">Introducción</ThemedText>
+                <ThemedText type="subtitle" style={{ color: Colors.secondary }}>Introducción</ThemedText>
                 <Text style={styles.prayer}>
                 La Iglesia, siguiendo una antigua costumbre, prepara la fiesta de San José, el día 19 de marzo, dedicando al Santo Patriarca los siete domingos anteriores a esa fiesta —en recuerdo de los principales gozos y dolores de la vida de San José.
                 </Text>
