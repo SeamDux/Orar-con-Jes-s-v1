@@ -27,22 +27,16 @@
       }
     },
     "production": {
-      "ios": {
-        "buildType": "release"
-      }
+      "ios": {}
     },
     "app-bundle": {
       "android": {
         "buildType": "app-bundle"
       }
     },
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "ios": {
-        "developmentClient": true,
-        "distribution": "internal",
-        "simulator": true
+    "apk": {
+      "android": {
+        "buildType": "apk"
       }
     }
   }

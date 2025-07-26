@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../../components/Themed';
 import Colors from '../../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -24,7 +24,7 @@ export default function LetaniasHumildadScreen() {
             Que el Cardenal Merry del Val solía recitar después de celebrar la Santa Misa.{"\n\n"}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.humanitas.cl/iglesia/el-cardenal-rafael-merry-del-val', '_blank')}
+            onPress={() => Linking.openURL('https://www.humanitas.cl/iglesia/el-cardenal-rafael-merry-del-val')}
           >
             <Text style={styles.buttonText}>Conoce más sobre el Cardenal Merry del Val</Text>
           </TouchableOpacity>{"\n"}

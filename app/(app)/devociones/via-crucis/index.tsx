@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../../components/Themed';
 import Colors from '../../../../constants/Colors';
 import { Stack, router } from 'expo-router';
@@ -51,10 +51,10 @@ export default function ViaCrucisScreen() {
           </Text>
 
           <TouchableOpacity
-            style={styles.bioButton}
-            onPress={() => window.open('https://stjosemaria.org/biography/', '_blank')}
+            style={styles.button}
+            onPress={() => Linking.openURL('https://stjosemaria.org/biography/')}
           >
-            <Text style={styles.prepButtonText}>Biografía de San Josemaría Escrivá</Text>
+            <Text style={styles.buttonText}>Conoce más sobre San Josemaría Escrivá</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 1,
   },
-  bioButton: {
+  button: {
     backgroundColor: Colors.primary,
     borderRadius: 25,
     paddingVertical: 14,
@@ -183,5 +183,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.18,
     shadowRadius: 2.0,
     elevation: 3,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    letterSpacing: 1,
   },
 }); 

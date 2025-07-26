@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -39,7 +39,7 @@ export default function MandamientosScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://youtube.com/playlist?list=PLDFmwHW6wkBpAqWwFwUurKyHUywbxgTuC&si=VFI3xNNOTRpg0vYO', '_blank')}
+            onPress={() => Linking.openURL('https://youtube.com/playlist?list=PLDFmwHW6wkBpAqWwFwUurKyHUywbxgTuC&si=VFI3xNNOTRpg0vYO')}
                               >
             <Text style={styles.buttonText}>Saber más</Text>
           </TouchableOpacity>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack, Link } from 'expo-router';
@@ -84,7 +84,7 @@ export default function MandamientosIglesiaScreen() {
             <Text style={styles.text}>
               Señala la obligación de ayudar, cada uno según su capacidad, a cubrir las necesidades materiales de la Iglesia. En Chile la Iglesia ha establecido que todos los fieles que reciben ingresos de cualquier naturaleza deben entregar para las obras de la Iglesia el 1% de sus ingresos. Esto se llama "el uno por ciento". Es la respectiva parroquia.
             </Text>
-            <TouchableOpacity style={styles.button} onPress={() => window.open('https://unoporcientosanbernardo.cl', '_blank')}>
+            <TouchableOpacity style={styles.button} onPress={() => Linking.openURL('https://unoporcientosanbernardo.cl')}>
               <Text style={styles.buttonText}>Ir al sitio del 1%</Text>
             </TouchableOpacity>
           </View>

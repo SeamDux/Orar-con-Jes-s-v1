@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Stack } from 'expo-router';
 import Colors from '../../../constants/Colors';
 
@@ -21,7 +21,7 @@ export default function ConsagracionSagradoScreen() {
           <Text style={styles.autor}>Sta. Margarita María de Alacoque</Text>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.corazones.org/santos/margarita_maria_alacoque.htm', '_blank')}
+            onPress={() => Linking.openURL('https://www.corazones.org/santos/margarita_maria_alacoque.htm')}
           >
             <Text style={styles.buttonText}>Conoce más sobre Sta. Margarita María</Text>
           </TouchableOpacity>

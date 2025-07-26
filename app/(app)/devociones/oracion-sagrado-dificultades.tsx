@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -22,7 +22,7 @@ export default function OracionSagradoDificultadesScreen() {
           <Text style={styles.author}>San Claudio de la Colombiere</Text>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.corazones.org/santos/claudio_colombiere.htm', '_blank')}
+            onPress={() => Linking.openURL('https://www.corazones.org/santos/claudio_colombiere.htm')}
                     >
             <Text style={styles.buttonText}>Conoce más sobre San Claudio de la Colombiere</Text>
             </TouchableOpacity>

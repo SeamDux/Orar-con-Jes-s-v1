@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -39,7 +39,7 @@ export default function CantosOfertorioScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://youtu.be/pnxHrbYRrJ8?si=jKbXJCTRVrnNEcvu', '_blank')}
+            onPress={() => Linking.openURL('https://youtu.be/pnxHrbYRrJ8?si=jKbXJCTRVrnNEcvu')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
           </TouchableOpacity>
@@ -67,7 +67,7 @@ export default function CantosOfertorioScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://youtu.be/6yuLB-uL9L4?si=UbfCx3Pv5bBcEYnL', '_blank')}
+            onPress={() => Linking.openURL('https://youtu.be/6yuLB-uL9L4?si=UbfCx3Pv5bBcEYnL')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
           </TouchableOpacity>
@@ -91,7 +91,7 @@ export default function CantosOfertorioScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=V2k1bx6UJz8', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=V2k1bx6UJz8')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
           </TouchableOpacity>
@@ -113,7 +113,7 @@ export default function CantosOfertorioScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=B281oFYllbQ', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=B281oFYllbQ')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
           </TouchableOpacity>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Stack } from 'expo-router';
 import Colors from '../../../constants/Colors';
 
@@ -20,7 +20,7 @@ export default function AcordaosScreen() {
           <Text style={styles.titulo}>Acordaos (Oración de San Bernardo)</Text>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => window.open('https://www.vaticannews.va/es/santos/08/20/s--bernardo--abad-y-doctor-de-la-iglesia.html', '_blank')}
+          onPress={() => Linking.openURL('https://www.vaticannews.va/es/santos/08/20/s--bernardo--abad-y-doctor-de-la-iglesia.html')}
                             >
           <Text style={styles.buttonText}>San Bernardo de Claraval</Text>
         </TouchableOpacity>

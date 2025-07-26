@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -61,7 +61,7 @@ export default function CantosComunionScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=f64d3GrVDPI&list=PLn0bdOqKV4pCwipMYlIc-kdVfQ17Wxwcf&index=4', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=f64d3GrVDPI&list=PLn0bdOqKV4pCwipMYlIc-kdVfQ17Wxwcf&index=4')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
           </TouchableOpacity>
@@ -87,7 +87,7 @@ export default function CantosComunionScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=mnrPH9IJOFc', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=mnrPH9IJOFc')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
           </TouchableOpacity>
@@ -111,7 +111,7 @@ export default function CantosComunionScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=jwOlP3mm_3g', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=jwOlP3mm_3g')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
           </TouchableOpacity>
@@ -131,7 +131,7 @@ export default function CantosComunionScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=94mPOZRkiFs', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=94mPOZRkiFs')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
           </TouchableOpacity>

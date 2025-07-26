@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -29,7 +29,7 @@ export default function VirtudesTeologalesScreen() {
           </View>
             <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=6jI5yH8loz8', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=6jI5yH8loz8')}
                     >
             <Text style={styles.buttonText}>Saber más</Text>
             </TouchableOpacity>

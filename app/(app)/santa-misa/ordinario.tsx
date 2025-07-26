@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Pressable, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, Pressable, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack, useRouter } from 'expo-router';
@@ -88,7 +88,7 @@ export default function OrdinarioPage() {
 
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://multimedia.opusdei.org/doc/pdf/Diìptico%20Eucaristiìa%20OD420230423225044294419.pdf', '_blank')}
+            onPress={() => Linking.openURL('https://multimedia.opusdei.org/doc/pdf/Diíptico%20Eucaristía%20OD420230423225044294419.pdf')}
                     >
             <Text style={styles.buttonText}>Saber mas</Text>
             </TouchableOpacity>

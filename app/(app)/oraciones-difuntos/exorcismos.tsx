@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Pressable, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, Pressable, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack, router } from 'expo-router';
@@ -28,9 +28,9 @@ export default function ExorcismosScreen() {
 
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_1999-01-26_il-rito-degli-esorcismi_sp.html', '_blank')}
-              >
-            <Text style={styles.buttonText}>El nuevo rito de los Exorcismos</Text>
+            onPress={() => Linking.openURL('https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_1999-01-26_il-rito-degli-esorcismi_sp.html')}
+          >
+            <Text style={styles.buttonText}>Leer más sobre los exorcismos</Text>
           </TouchableOpacity>
 
           <View style={styles.seccion}>

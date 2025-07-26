@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -44,7 +44,7 @@ export default function CantosEntradaScreen() {
           </View>
             <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://youtu.be/vUp7Uq2guPk?si=rmCHvhL2jHTOV-83', '_blank')}
+            onPress={() => Linking.openURL('https://youtu.be/vUp7Uq2guPk?si=rmCHvhL2jHTOV-83')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
             </TouchableOpacity>
@@ -68,7 +68,7 @@ export default function CantosEntradaScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=HVbKk-UWmwc', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=HVbKk-UWmwc')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
             </TouchableOpacity>
@@ -96,7 +96,7 @@ export default function CantosEntradaScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=R9SeI3Wqz94', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=R9SeI3Wqz94')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
             </TouchableOpacity>
@@ -124,7 +124,7 @@ export default function CantosEntradaScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=o13EntxXHW0', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=o13EntxXHW0')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
             </TouchableOpacity>
@@ -147,7 +147,7 @@ export default function CantosEntradaScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=W97nt1pQy3k', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=W97nt1pQy3k')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
             </TouchableOpacity>
@@ -187,7 +187,7 @@ export default function CantosEntradaScreen() {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => window.open('https://www.youtube.com/watch?v=vl8CtI-ZZYc', '_blank')}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=vl8CtI-ZZYc')}
                     >
             <Text style={styles.buttonText}>Escuchar</Text>
             </TouchableOpacity>
