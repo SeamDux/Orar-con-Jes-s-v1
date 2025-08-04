@@ -32,7 +32,7 @@ module.exports = {
     },
     android: {
       package: 'com.orarconjesus.app',
-      versionCode: 5,
+      versionCode: 6,
       adaptiveIcon: {
         foregroundImage: './assets/images/app-store-1024pt@1x.png',
         backgroundColor: '#ffffff'
