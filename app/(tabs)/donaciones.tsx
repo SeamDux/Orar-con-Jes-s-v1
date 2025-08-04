@@ -26,7 +26,7 @@ export default function DonacionesScreen() {
         <View style={styles.iconContainer}>
           <FontAwesome5 name="hand-holding-heart" size={64} color={Colors.primary} />
         </View>
-        <Text style={styles.title}>Apoya este proyecto</Text>
+        <Text style={styles.title}>Apoyanos!🙏</Text>
         <Text style={styles.gracias}>¡Gracias por tu generosidad!</Text>
         <Text style={styles.texto}>
           Si este proyecto te ha ayudado y quieres colaborar para que siga creciendo, 

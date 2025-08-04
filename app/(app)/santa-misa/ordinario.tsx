@@ -85,13 +85,6 @@ export default function OrdinarioPage() {
           <Pressable style={styles.opcion} onPress={() => router.push('/santa-misa/plegaria-4')}>
             <Text style={styles.opcionTexto}>Plegaria Eucarística IV</Text>
           </Pressable>
-
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => Linking.openURL('https://multimedia.opusdei.org/doc/pdf/Diíptico%20Eucaristía%20OD420230423225044294419.pdf')}
-                    >
-            <Text style={styles.buttonText}>Saber mas</Text>
-            </TouchableOpacity>
         </View>
       </ScrollView>
     </>

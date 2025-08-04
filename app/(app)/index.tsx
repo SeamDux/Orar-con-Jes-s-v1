@@ -10,13 +10,6 @@ export default function HomePage() {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
 
-          <Link href="/(app)/noticias" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="newspaper" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Noticias de la Diocesis</Text>
-            </TouchableOpacity>
-          </Link>
-
           <Link href="/(app)/noticias-vaticano" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="church" size={32} color={Colors.primary} />
@@ -28,6 +21,13 @@ export default function HomePage() {
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="flag" size={32} color={Colors.primary} />
               <Text style={styles.menuText}>Noticias de la Iglesia en Chile</Text>
+            </TouchableOpacity>
+          </Link>
+
+          <Link href="/(app)/noticias" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="newspaper" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Noticias de la Diocesis</Text>
             </TouchableOpacity>
           </Link>
 
