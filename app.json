@@ -21,8 +21,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.orarconjesus.app",
-      "buildNumber": "2"
+      "bundleIdentifier": "com.orarconjesus.app"
     },
     "android": {
       "package": "com.orarconjesus.app",

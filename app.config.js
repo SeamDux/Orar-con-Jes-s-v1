@@ -28,7 +28,8 @@ module.exports = {
     ],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: 'com.orarconjesus.app'
+      bundleIdentifier: 'com.orarconjesus.app',
+      buildNumber: "2"
     },
     android: {
       package: 'com.orarconjesus.app',
