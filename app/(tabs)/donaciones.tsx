@@ -66,9 +66,6 @@ export default function DonacionesScreen() {
           Si este proyecto te ha ayudado y quieres colaborar para que siga creciendo, 
           puedes hacer una donación voluntaria. Todo aporte ayuda a mantener y mejorar la aplicación.
         </Text>
-        <TouchableOpacity style={styles.botonDonar} onPress={handleDonar}>
-          <Text style={styles.textoBotonDonar}>Donar</Text>
-        </TouchableOpacity>
         
         <TouchableOpacity style={styles.botonTransferencia} onPress={handleTransferencia}>
           <Text style={styles.textoBotonTransferencia}>Transferencia Bancaria</Text>
