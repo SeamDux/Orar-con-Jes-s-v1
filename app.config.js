@@ -19,7 +19,7 @@ module.exports = {
     icon: './assets/images/android-chrome-512x512.png',
     userInterfaceStyle: 'light',
     splash: {
-      image: './assets/images/app-store-1024pt@1x (1).png',
+      image: 'assets/images/android/playstore-icon.png',
       resizeMode: 'contain',
       backgroundColor: '#ffffff'
     },
