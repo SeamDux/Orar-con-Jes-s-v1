@@ -31,6 +31,13 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
+          <Link href="/(app)/ensenanzas-papa-leon-xiv" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="crown" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Enseñanzas del Papa León XIV</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/evangelio-del-dia" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="book-open-variant" size={32} color={Colors.primary} />
