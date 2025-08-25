@@ -52,7 +52,7 @@ export default function ViaCrucisScreen() {
 
           <TouchableOpacity
             style={styles.button}
-            onPress={() => Linking.openURL('https://stjosemaria.org/biography/')}
+            onPress={() => Linking.openURL('https://opusdei.org/es-cl/article/biografia-de-san-josemaria-2')}
           >
             <Text style={styles.buttonText}>Conoce más sobre San Josemaría Escrivá</Text>
           </TouchableOpacity>

@@ -209,7 +209,7 @@ export default function SantoralScreen() {
               { day: '13', saint: 'S. Ponciano y S. Hipólito.' },
               { day: '15', saint: 'Asunción de la Santísima Virgen María.' },
               { day: '16', saint: 'S. Esteban de Hungría.' },
-              { day: '17', saint: 'S. Alberto Hurtado' },
+              { day: '18', saint: 'S. Alberto Hurtado. Sta. Elena.' },
               { day: '19', saint: 'S. Juan Eudes.' },
               { day: '20', saint: 'S. Bernardo.' },
               { day: '21', saint: 'S. Pío X.' },
