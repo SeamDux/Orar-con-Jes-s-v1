@@ -10,7 +10,7 @@ export default function ResumenDoctrinaScreen() {
     <>
       <Stack.Screen
         options={{
-          title: 'Resumen de la Doctrina Cristiana',
+          title: 'La Doctrina Cristiana',
           headerStyle: {
             backgroundColor: Colors.primary,
           },

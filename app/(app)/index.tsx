@@ -76,7 +76,7 @@ export default function HomePage() {
           <Link href="/(app)/resumen-doctrina" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="book-cross" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Resumen de la Doctrina Cristiana</Text>
+              <Text style={styles.menuText}>La Doctrina Cristiana</Text>
             </TouchableOpacity>
           </Link>
 
