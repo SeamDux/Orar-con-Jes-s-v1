@@ -12,7 +12,7 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
   const theme = useColorScheme() ?? 'light';
 
   return (
-    <ThemedView>
+    <ThemedView lightColor="transparent" darkColor="transparent" style={{ backgroundColor: 'transparent' }}>
       <TouchableOpacity
         style={styles.heading}
         onPress={() => setIsOpen((value) => !value)}
@@ -21,13 +21,26 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
           name="chevron.right"
           size={18}
           weight="medium"
-          color={theme === 'light' ? Colors.light.icon : Colors.dark.icon}
+          color={theme === 'light' ? Colors.secondary : Colors.light.text}
           style={{ transform: [{ rotate: isOpen ? '90deg' : '0deg' }] }}
         />
 
-        <ThemedText type="defaultSemiBold">{title}</ThemedText>
+        <ThemedText
+          type="defaultSemiBold"
+          style={{ color: theme === 'light' ? Colors.secondary : Colors.light.text, fontWeight: '700' }}
+        >
+          {title}
+        </ThemedText>
       </TouchableOpacity>
-      {isOpen && <ThemedView style={styles.content}>{children}</ThemedView>}
+      {isOpen && (
+        <ThemedView
+          style={[styles.content, { backgroundColor: 'transparent' }]}
+          lightColor="transparent"
+          darkColor="transparent"
+        >
+          {children}
+        </ThemedView>
+      )}
     </ThemedView>
   );
 }

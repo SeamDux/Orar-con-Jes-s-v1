@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import { Stack, Link } from 'expo-router';
@@ -18,6 +18,39 @@ export default function ResumenDoctrinaScreen() {
         }}
       />
       <View style={styles.container}>
+        <TouchableOpacity
+          style={styles.menuItem}
+          onPress={() => Linking.openURL('https://multimedia.opusdei.org/pdf/es/social.pdf#page14')}
+        >
+          <MaterialCommunityIcons name="scale-balance" size={24} color={Colors.primary} style={styles.icon} />
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Compendio de la Doctrina Social de la Iglesia</Text>
+            <Text style={styles.subtitle}>Abrir PDF</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.menuItem}
+          onPress={() => Linking.openURL('https://multimedia.opusdei.org/doc/pdf/catecismo20231031082545127124.pdf')}
+        >
+          <MaterialCommunityIcons name="book-open-variant" size={24} color={Colors.primary} style={styles.icon} />
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Catecismo de la Iglesia Católica</Text>
+            <Text style={styles.subtitle}>Abrir PDF</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.menuItem}
+          onPress={() => Linking.openURL('https://odnmedia.s3.amazonaws.com/files/compendio%20catecismo%20iglesia%20catolica20200102-194933.pdf')}
+        >
+          <MaterialCommunityIcons name="book" size={24} color={Colors.primary} style={styles.icon} />
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Compendio del Catecismo de la Iglesia Católica</Text>
+            <Text style={styles.subtitle}>Abrir PDF</Text>
+          </View>
+        </TouchableOpacity>
+
         <Link href="/resumen-doctrina/credo" asChild>
           <TouchableOpacity style={styles.menuItem}>
             <MaterialCommunityIcons name="book-cross" size={24} color={Colors.primary} style={styles.icon} />

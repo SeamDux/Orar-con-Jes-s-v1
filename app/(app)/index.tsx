@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, ScrollView, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, ScrollView, View, Linking } from 'react-native';
 import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import { Link, router } from 'expo-router';
@@ -37,6 +37,14 @@ export default function HomePage() {
               <Text style={styles.menuText}>Enseñanzas del Papa León XIV</Text>
             </TouchableOpacity>
           </Link>
+
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => Linking.openURL('https://ia801306.us.archive.org/32/items/SagradaBibliaStraubinger07/Sagrada%20Biblia%20Straubinger%2007.pdf')}
+          >
+            <MaterialCommunityIcons name="book" size={32} color={Colors.primary} />
+            <Text style={styles.menuText}>Sagrada Biblia</Text>
+          </TouchableOpacity>
 
           <Link href="/(app)/evangelio-del-dia" asChild>
             <TouchableOpacity style={styles.menuItem}>

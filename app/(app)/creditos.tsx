@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
 import { Text } from '../../components/Themed';
+import { ThemedText } from '../../components/ThemedText';
 import Colors from '../../constants/Colors';
 import { Stack } from 'expo-router';
+import { Collapsible } from '../../components/Collapsible';
 
 export default function CreditosScreen() {
   return (
@@ -61,6 +63,25 @@ export default function CreditosScreen() {
           <Text style={styles.textoSmall}>Copyright Ediciones Obispado de San Bernardo (en papel)</Text>
           <Text style={styles.textoSmall}>ISBN 978-956-8430-18-4</Text>
           <Text style={styles.textoSmall}>Impreso en AImpresores</Text>
+
+          <View style={styles.separator} />
+
+          <Text style={styles.sectionTitle}>Ayuda rápida: actualizar aplicaciones</Text>
+
+          <View style={{ width: '100%' }}>
+            <Collapsible title="Android">
+              <ThemedText style={styles.textoSmall}>• Play Store → Perfil → Ajustes → Preferencias de red → Actualizar apps automáticamente: “Solo por Wi‑Fi” o “En cualquier red”.</ThemedText>
+              <ThemedText style={styles.textoSmall}>• Para una app: página de la app → ⋮ → “Actualizar automáticamente”.</ThemedText>
+              <ThemedText style={styles.textoSmall}>• Manual: Play Store → Perfil → Gestionar apps y dispositivo → Actualizaciones disponibles → “Actualizar todo”.</ThemedText>
+            </Collapsible>
+
+            <View style={{ height: 8 }} />
+
+            <Collapsible title="iPhone/iPad">
+              <ThemedText style={styles.textoSmall}>• Ajustes → App Store → activar “Actualizaciones de apps”. Opcional: permitir datos móviles.</ThemedText>
+              <ThemedText style={styles.textoSmall}>• Manual: App Store → tu foto → desliza para refrescar → “Actualizar todo”.</ThemedText>
+            </Collapsible>
+          </View>
         </View>
       </ScrollView>
     </>
