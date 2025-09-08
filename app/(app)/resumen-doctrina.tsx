@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import { StyleSheet, TouchableOpacity, Alert, ActivityIndicator, Linking, ScrollView } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import { Stack, Link } from 'expo-router';
@@ -9,6 +9,28 @@ import * as Sharing from 'expo-sharing';
 
 export default function ResumenDoctrinaScreen() {
   const [downloading, setDownloading] = useState<string | null>(null);
+
+  const handleOpenVaticanURL = async (url: string, title: string) => {
+    try {
+      const supported = await Linking.canOpenURL(url);
+      if (supported) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(
+          'Error',
+          `No se puede abrir la URL de ${title}. Verifica tu conexión a internet.`,
+          [{ text: 'OK' }]
+        );
+      }
+    } catch (error) {
+      console.error('Error al abrir URL:', error);
+      Alert.alert(
+        'Error',
+        `No se pudo abrir la página de ${title}. Verifica tu conexión a internet.`,
+        [{ text: 'OK' }]
+      );
+    }
+  };
 
   const handleDownloadAndSharePDF = async (url: string, title: string) => {
     try {
@@ -84,93 +106,51 @@ export default function ResumenDoctrinaScreen() {
         }}
       />
       <View style={styles.container}>
-        {/* Mensaje informativo */}
-        <View style={styles.infoContainer}>
-          <MaterialCommunityIcons name="information-outline" size={20} color={Colors.primary} style={styles.infoIcon} />
-          <View style={styles.infoTextContainer}>
-            <Text style={styles.infoTitle}>📱 Cómo usar los PDFs</Text>
-            <Text style={styles.infoText}>
-              Las primeras 3 opciones descargan PDFs que puedes abrir con:
-            </Text>
-            <Text style={styles.infoText}>
-              • <Text style={styles.bold}>Adobe Reader</Text> (recomendado)
-            </Text>
-            <Text style={styles.infoText}>
-              • <Text style={styles.bold}>Google PDF Viewer</Text>
-            </Text>
-            <Text style={styles.infoText}>
-              • <Text style={styles.bold}>Cualquier lector de PDF</Text> instalado
-            </Text>
-          </View>
-        </View>
+        <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={true}>
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => handleDownloadAndSharePDF(
-            'https://multimedia.opusdei.org/pdf/es/social.pdf#page14',
+          onPress={() => handleOpenVaticanURL(
+            'https://www.vatican.va/roman_curia/pontifical_councils/justpeace/documents/rc_pc_justpeace_doc_20060526_compendio-dott-soc_sp.html',
             'Compendio de la Doctrina Social de la Iglesia'
           )}
-          disabled={downloading !== null}
         >
           <MaterialCommunityIcons name="scale-balance" size={24} color={Colors.primary} style={styles.icon} />
           <View style={styles.textContainer}>
             <Text style={styles.title}>Compendio de la Doctrina Social de la Iglesia</Text>
-            <Text style={styles.subtitle}>
-              {downloading === 'Compendio de la Doctrina Social de la Iglesia' 
-                ? 'Descargando...' 
-                : 'Descargar y abrir PDF'
-              }
-            </Text>
+            <Text style={styles.subtitle}>Abrir en el sitio web del Vaticano</Text>
           </View>
-          {downloading === 'Compendio de la Doctrina Social de la Iglesia' && (
-            <ActivityIndicator size="small" color={Colors.primary} />
-          )}
+          <MaterialCommunityIcons name="open-in-new" size={20} color={Colors.gray} />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => handleDownloadAndSharePDF(
-            'https://multimedia.opusdei.org/doc/pdf/catecismo20231031082545127124.pdf',
+          onPress={() => handleOpenVaticanURL(
+            'https://www.vatican.va/archive/catechism_sp/index_sp.html',
             'Catecismo de la Iglesia Católica'
           )}
-          disabled={downloading !== null}
         >
           <MaterialCommunityIcons name="book-open-variant" size={24} color={Colors.primary} style={styles.icon} />
           <View style={styles.textContainer}>
             <Text style={styles.title}>Catecismo de la Iglesia Católica</Text>
-            <Text style={styles.subtitle}>
-              {downloading === 'Catecismo de la Iglesia Católica' 
-                ? 'Descargando...' 
-                : 'Descargar y abrir PDF'
-              }
-            </Text>
+            <Text style={styles.subtitle}>Abrir en el sitio web del Vaticano</Text>
           </View>
-          {downloading === 'Catecismo de la Iglesia Católica' && (
-            <ActivityIndicator size="small" color={Colors.primary} />
-          )}
+          <MaterialCommunityIcons name="open-in-new" size={20} color={Colors.gray} />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => handleDownloadAndSharePDF(
-            'https://odnmedia.s3.amazonaws.com/files/compendio%20catecismo%20iglesia%20catolica20200102-194933.pdf',
+          onPress={() => handleOpenVaticanURL(
+            'https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_sp.html',
             'Compendio del Catecismo de la Iglesia Católica'
           )}
-          disabled={downloading !== null}
         >
           <MaterialCommunityIcons name="book" size={24} color={Colors.primary} style={styles.icon} />
           <View style={styles.textContainer}>
             <Text style={styles.title}>Compendio del Catecismo de la Iglesia Católica</Text>
-            <Text style={styles.subtitle}>
-              {downloading === 'Compendio del Catecismo de la Iglesia Católica' 
-                ? 'Descargando...' 
-                : 'Descargar y abrir PDF'
-              }
-            </Text>
+            <Text style={styles.subtitle}>Abrir en el sitio web del Vaticano</Text>
           </View>
-          {downloading === 'Compendio del Catecismo de la Iglesia Católica' && (
-            <ActivityIndicator size="small" color={Colors.primary} />
-          )}
+          <MaterialCommunityIcons name="open-in-new" size={20} color={Colors.gray} />
         </TouchableOpacity>
 
         <Link href="/resumen-doctrina/credo" asChild>
@@ -200,6 +180,7 @@ export default function ResumenDoctrinaScreen() {
             </View>
           </TouchableOpacity>
         </Link>
+        </ScrollView>
       </View>
     </>
   );
@@ -208,8 +189,12 @@ export default function ResumenDoctrinaScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
     backgroundColor: Colors.light.background,
+  },
+  scrollView: {
+    flex: 1,
+    padding: 20,
+    paddingBottom: 40,
   },
   menuItem: {
     flexDirection: 'row',
@@ -242,41 +227,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: Colors.gray,
     marginTop: 5,
-  },
-  infoContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: Colors.light.background,
-    padding: 15,
-    borderRadius: 10,
-    marginBottom: 15,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  infoIcon: {
-    marginRight: 10,
-  },
-  infoTextContainer: {
-    flex: 1,
-  },
-  infoTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: Colors.text,
-    marginBottom: 5,
-  },
-  infoText: {
-    fontSize: 14,
-    color: Colors.gray,
-    marginBottom: 2,
-  },
-  bold: {
-    fontWeight: 'bold',
   },
 }); 

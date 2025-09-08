@@ -1,35 +1,101 @@
-import React from 'react';
-import { StyleSheet, TouchableOpacity, ScrollView, View, Linking } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, TouchableOpacity, ScrollView, View, Linking, Animated } from 'react-native';
 import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import { Link, router } from 'expo-router';
 import { MaterialCommunityIcons, Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
 export default function HomePage() {
+  const [newsDropdownOpen, setNewsDropdownOpen] = useState(false);
+  const [newsDropdownHeight] = useState(new Animated.Value(0));
+  const [liturgyDropdownOpen, setLiturgyDropdownOpen] = useState(false);
+  const [liturgyDropdownHeight] = useState(new Animated.Value(0));
+  const [devotionsDropdownOpen, setDevotionsDropdownOpen] = useState(false);
+  const [devotionsDropdownHeight] = useState(new Animated.Value(0));
+
+  const toggleNewsDropdown = () => {
+    const toValue = newsDropdownOpen ? 0 : 1;
+    setNewsDropdownOpen(!newsDropdownOpen);
+    
+    Animated.timing(newsDropdownHeight, {
+      toValue,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+  };
+
+  const toggleLiturgyDropdown = () => {
+    const toValue = liturgyDropdownOpen ? 0 : 1;
+    setLiturgyDropdownOpen(!liturgyDropdownOpen);
+    
+    Animated.timing(liturgyDropdownHeight, {
+      toValue,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+  };
+
+  const toggleDevotionsDropdown = () => {
+    const toValue = devotionsDropdownOpen ? 0 : 1;
+    setDevotionsDropdownOpen(!devotionsDropdownOpen);
+    
+    Animated.timing(devotionsDropdownHeight, {
+      toValue,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
 
-          <Link href="/(app)/noticias-vaticano" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="church" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Noticias de la Iglesia - Santa Sede</Text>
-            </TouchableOpacity>
-          </Link>
-
-          <Link href="/(app)/noticias-iglesia-chile" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="flag" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Noticias de la Iglesia en Chile</Text>
-            </TouchableOpacity>
-          </Link>
-
-          <Link href="/(app)/noticias" asChild>
-            <TouchableOpacity style={styles.menuItem}>
+          {/* Menú desplegable de Noticias */}
+          <View style={styles.dropdownContainer}>
+            <TouchableOpacity style={styles.menuItem} onPress={toggleNewsDropdown}>
               <MaterialCommunityIcons name="newspaper" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Noticias de la Diocesis</Text>
+              <Text style={styles.menuText}>Noticias</Text>
+              <MaterialCommunityIcons 
+                name={newsDropdownOpen ? "chevron-up" : "chevron-down"} 
+                size={24} 
+                color={Colors.primary} 
+              />
             </TouchableOpacity>
-          </Link>
+            
+            <Animated.View 
+              style={[
+                styles.dropdownContent,
+                {
+                  height: newsDropdownHeight.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, 180], // Altura aproximada para 3 opciones
+                  }),
+                  opacity: newsDropdownHeight,
+                }
+              ]}
+            >
+              <Link href="/(app)/noticias-vaticano" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="church" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Noticias de la Iglesia - Santa Sede</Text>
+                </TouchableOpacity>
+              </Link>
+
+              <Link href="/(app)/noticias-iglesia-chile" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="flag" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Noticias de la Iglesia en Chile</Text>
+                </TouchableOpacity>
+              </Link>
+
+              <Link href="/(app)/noticias" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="newspaper" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Noticias de la Diócesis</Text>
+                </TouchableOpacity>
+              </Link>
+            </Animated.View>
+          </View>
 
           <Link href="/(app)/ensenanzas-papa-leon-xiv" asChild>
             <TouchableOpacity style={styles.menuItem}>
@@ -109,26 +175,52 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
-          <Link href="/(app)/liturgia" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="clock-outline" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Liturgia de las Horas</Text>
-            </TouchableOpacity>
-          </Link>
-
-          <Link href="/(app)/liturgia-horas-dia" asChild>
-            <TouchableOpacity style={styles.menuItem}>
+          {/* Menú desplegable de Liturgia de las Horas */}
+          <View style={styles.dropdownContainer}>
+            <TouchableOpacity style={styles.menuItem} onPress={toggleLiturgyDropdown}>
               <MaterialCommunityIcons name="clock" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Liturgia de las Horas del Día</Text>
+              <Text style={styles.menuText}>Liturgia de las Horas</Text>
+              <MaterialCommunityIcons 
+                name={liturgyDropdownOpen ? "chevron-up" : "chevron-down"} 
+                size={24} 
+                color={Colors.primary} 
+              />
             </TouchableOpacity>
-          </Link>
+            
+            <Animated.View 
+              style={[
+                styles.dropdownContent,
+                {
+                  height: liturgyDropdownHeight.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, 180], // Altura aproximada para 3 opciones
+                  }),
+                  opacity: liturgyDropdownHeight,
+                }
+              ]}
+            >
+              <Link href="/(app)/liturgia" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="clock-outline" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Liturgia de las Horas Dominical</Text>
+                </TouchableOpacity>
+              </Link>
 
-          <Link href="/(app)/oficio-del-dia" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="book-open-variant" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Liturgia de las Horas del día en Audio</Text>
-            </TouchableOpacity>
-          </Link>
+              <Link href="/(app)/liturgia-horas-dia" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="clock" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Liturgia de las Horas del Día</Text>
+                </TouchableOpacity>
+              </Link>
+
+              <Link href="/(app)/oficio-del-dia" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="book-open-variant" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Liturgia de las Horas del día en Audio</Text>
+                </TouchableOpacity>
+              </Link>
+            </Animated.View>
+          </View>
 
           <Link href="/(app)/oraciones-noche" asChild>
             <TouchableOpacity style={styles.menuItem}>
@@ -158,47 +250,73 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
-          <Link href="/(app)/trinidad" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="triangle-outline" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Devociones a la Santísima Trinidad</Text>
+          {/* Menú desplegable de Devociones */}
+          <View style={styles.dropdownContainer}>
+            <TouchableOpacity style={styles.menuItem} onPress={toggleDevotionsDropdown}>
+              <MaterialCommunityIcons name="heart" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Devociones</Text>
+              <MaterialCommunityIcons 
+                name={devotionsDropdownOpen ? "chevron-up" : "chevron-down"} 
+                size={24} 
+                color={Colors.primary} 
+              />
             </TouchableOpacity>
-          </Link>
+            
+            <Animated.View 
+              style={[
+                styles.dropdownContent,
+                {
+                  height: devotionsDropdownHeight.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, 360], // Altura aproximada para 6 opciones
+                  }),
+                  opacity: devotionsDropdownHeight,
+                }
+              ]}
+            >
+              <Link href="/(app)/trinidad" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="triangle-outline" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Devociones a la Santísima Trinidad</Text>
+                </TouchableOpacity>
+              </Link>
 
-          <Link href="/(app)/devociones-jesus" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="heart-outline" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Devociones a Nuestro Señor Jesucristo</Text>
-            </TouchableOpacity>
-          </Link>
+              <Link href="/(app)/devociones-jesus" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="heart-outline" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Devociones a Nuestro Señor Jesucristo</Text>
+                </TouchableOpacity>
+              </Link>
 
-          <Link href="/(app)/devociones-espiritu" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="fire" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Devociones al Espíritu Santo</Text>
-            </TouchableOpacity>
-          </Link>
+              <Link href="/(app)/devociones-espiritu" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="fire" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Devociones al Espíritu Santo</Text>
+                </TouchableOpacity>
+              </Link>
 
-          <Link href="/(app)/devociones-maria" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="account-heart" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Devociones a la Virgen María</Text>
-            </TouchableOpacity>
-          </Link>
+              <Link href="/(app)/devociones-maria" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="account-heart" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Devociones a la Virgen María</Text>
+                </TouchableOpacity>
+              </Link>
 
-          <Link href="/(app)/devociones-jose" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="flower-tulip" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Devociones a San José</Text>
-            </TouchableOpacity>
-          </Link>
+              <Link href="/(app)/devociones-jose" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="flower-tulip" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Devociones a San José</Text>
+                </TouchableOpacity>
+              </Link>
 
-          <Link href="/(app)/devociones-moribundo" asChild>
-            <TouchableOpacity style={styles.menuItem}>
-              <MaterialCommunityIcons name="heart-pulse" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Devociones para acompañar a un enfermo o moribundo</Text>
-            </TouchableOpacity>
-          </Link>
+              <Link href="/(app)/devociones-moribundo" asChild>
+                <TouchableOpacity style={styles.dropdownItem}>
+                  <MaterialCommunityIcons name="heart-pulse" size={24} color={Colors.primary} />
+                  <Text style={styles.dropdownText}>Devociones para acompañar a un enfermo o moribundo</Text>
+                </TouchableOpacity>
+              </Link>
+            </Animated.View>
+          </View>
 
           <Link href="/(app)/oraciones-difuntos" asChild>
             <TouchableOpacity style={styles.menuItem}>
@@ -368,5 +486,36 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.10,
     shadowRadius: 4,
     elevation: 3,
+  },
+  dropdownContainer: {
+    marginBottom: 15,
+  },
+  dropdownContent: {
+    backgroundColor: Colors.white,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  dropdownItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 15,
+    paddingLeft: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
+  },
+  dropdownText: {
+    fontSize: 16,
+    marginLeft: 15,
+    color: Colors.secondary,
+    flex: 1,
   },
 }); 
