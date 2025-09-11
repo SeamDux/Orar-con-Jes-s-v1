@@ -35,10 +35,6 @@ export default function LaudesScreen() {
           </View>
 
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Laudes</Text>
-          </View>
-
-          <View style={styles.section}>
             <Text style={styles.sectionTitle}>Himno</Text>
             <Text style={styles.text}>Es verdad que las luces del alba</Text>
             <Text style={styles.text}>del día de hoy</Text>
@@ -169,7 +165,7 @@ export default function LaudesScreen() {
             <Text style={styles.text}>Bendito el Señor en la bóveda del cielo,</Text>
             <Text style={styles.text}>alabado y glorioso y ensalzado por los siglos.{'\n\n'}</Text>
 
-            <Text style={styles.salmoSubtitle}>No se dice Gloria al Padre</Text>
+            <Text style={styles.italicText}>No se dice Gloria al Padre</Text>
 
             <Text style={styles.antifona}>Ant. 2: En medio de las llamas, los tres jóvenes unánimes cantaban: "Bendito sea el Señor". Aleluya.</Text>
 
@@ -416,5 +412,6 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     color: Colors.text,
     marginVertical: 8,
+    fontWeight: 'bold',
   },
 }); 

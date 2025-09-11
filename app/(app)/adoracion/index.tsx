@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   oracionTexto: {
-    fontSize: 20,
+    fontSize: 17,
     lineHeight: 30,
     textAlign: 'justify',
   },
