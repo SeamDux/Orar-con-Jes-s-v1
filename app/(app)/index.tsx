@@ -119,6 +119,13 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
+          <Link href="/(app)/meditacion-diaria" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="book-account" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Meditación diaria · Lectio divina</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/consejo-camino" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="walk" size={32} color={Colors.primary} />

@@ -29,7 +29,7 @@
         "foregroundImage": "./assets/images/app-store-1024pt@1x.png",
         "backgroundColor": "#ffffff"
       },
-      "jsEngine": "jsc",
+      "jsEngine": "hermes",
       "enableProguardInReleaseBuilds": false,
       "enableShrinkResources": false
     },
