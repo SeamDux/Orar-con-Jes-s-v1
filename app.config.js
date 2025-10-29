@@ -14,7 +14,7 @@ module.exports = {
     },
     name: 'Orar con Jesús',
     slug: 'orarconjesus',
-    version: '1.0.1',
+    version: '1.0.2',
     orientation: 'portrait',
     icon: './assets/images/android-chrome-512x512.png',
     userInterfaceStyle: 'light',
@@ -33,7 +33,7 @@ module.exports = {
     },
     android: {
       package: 'com.orarconjesus.app',
-      versionCode: 10,
+      versionCode: 11,
       adaptiveIcon: {
         foregroundImage: 'assets/images/android/mipmap-xxxhdpi/ic_launcher.png',
         backgroundColor: '#ffffff'
@@ -43,7 +43,10 @@ module.exports = {
       enableProguardInReleaseBuilds: true,
       enableHermes: true,
       jsEngine: "hermes",
-      targetSdkVersion: 35
+      targetSdkVersion: 35,
+      // Soporte para 16 kB memory page sizes
+      supportsRtl: true,
+      allowBackup: false
     },
     web: {
       favicon: './assets/images/favicon-32x32.png',
@@ -58,7 +61,16 @@ module.exports = {
           android: {
             compileSdkVersion: 35,
             targetSdkVersion: 35,
-            buildToolsVersion: '35.0.0'
+            buildToolsVersion: '35.0.0',
+            ndkVersion: '27.2.12479018',
+            // Configuración para soporte 16 kB memory page sizes
+            enableProguardInReleaseBuilds: true,
+            enableShrinkResourcesInReleaseBuilds: true,
+            proguardFiles: ['proguard-rules.pro'],
+            // Configuración de memoria optimizada
+            dexOptions: {
+              javaMaxHeapSize: '4g'
+            }
           }
         }
       ]
