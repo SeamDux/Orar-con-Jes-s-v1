@@ -33,7 +33,7 @@ module.exports = {
     },
     android: {
       package: 'com.orarconjesus.app',
-      versionCode: 11,
+      versionCode: 13,
       adaptiveIcon: {
         foregroundImage: 'assets/images/android/mipmap-xxxhdpi/ic_launcher.png',
         backgroundColor: '#ffffff'
@@ -62,7 +62,13 @@ module.exports = {
             compileSdkVersion: 35,
             targetSdkVersion: 35,
             buildToolsVersion: '35.0.0',
-            ndkVersion: '27.2.12479018',
+            ndkVersion: '28.0.12674087',
+            abiFilters: ['arm64-v8a'],
+            packagingOptions: {
+              jniLibs: {
+                useLegacyPackaging: false
+              }
+            },
             // Configuración para soporte 16 kB memory page sizes
             enableProguardInReleaseBuilds: true,
             enableShrinkResourcesInReleaseBuilds: true,

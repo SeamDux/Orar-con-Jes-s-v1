@@ -45,7 +45,16 @@
           "android": {
             "compileSdkVersion": 35,
             "targetSdkVersion": 35,
-            "buildToolsVersion": "35.0.0"
+            "buildToolsVersion": "35.0.0",
+            "ndkVersion": "28.0.12674087",
+            "abiFilters": [
+              "arm64-v8a"
+            ],
+            "packagingOptions": {
+              "jniLibs": {
+                "useLegacyPackaging": false
+              }
+            }
           }
         }
       ]
