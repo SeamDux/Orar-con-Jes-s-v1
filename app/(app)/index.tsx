@@ -104,13 +104,12 @@ export default function HomePage() {
             </TouchableOpacity>
           </Link>
 
-          <TouchableOpacity
-            style={styles.menuItem}
-            onPress={() => Linking.openURL('https://ia801306.us.archive.org/32/items/SagradaBibliaStraubinger07/Sagrada%20Biblia%20Straubinger%2007.pdf')}
-          >
-            <MaterialCommunityIcons name="book" size={32} color={Colors.primary} />
-            <Text style={styles.menuText}>Sagrada Biblia</Text>
-          </TouchableOpacity>
+          <Link href="/(app)/sagrada-biblia" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="book" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Sagrada Biblia</Text>
+            </TouchableOpacity>
+          </Link>
 
           <Link href="/(app)/evangelio-del-dia" asChild>
             <TouchableOpacity style={styles.menuItem}>
