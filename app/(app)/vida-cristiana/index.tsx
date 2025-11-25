@@ -54,6 +54,13 @@ export default function VidaCristianaScreen() {
             </TouchableOpacity>
           </Link>
 
+          <Link href="/(app)/vida-cristiana/vocacion" asChild>
+            <TouchableOpacity style={styles.menuItem}>
+              <MaterialCommunityIcons name="account-group" size={32} color={Colors.primary} />
+              <Text style={styles.menuText}>Vocación</Text>
+            </TouchableOpacity>
+          </Link>
+
           <Link href="/(app)/vida-cristiana/penitencia" asChild>
             <TouchableOpacity style={styles.menuItem}>
               <MaterialCommunityIcons name="cross" size={32} color={Colors.primary} />
