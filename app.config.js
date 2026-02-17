@@ -33,7 +33,7 @@ module.exports = {
     },
     android: {
       package: 'com.orarconjesus.app',
-      versionCode: 16,
+      versionCode: 17,
       adaptiveIcon: {
         foregroundImage: 'assets/images/android/mipmap-xxxhdpi/ic_launcher.png',
         backgroundColor: '#ffffff'
@@ -57,6 +57,7 @@ module.exports = {
       'expo-font',
       'expo-router',
       'expo-web-browser',
+      './plugins/android-16kb.js',
       [
         'expo-build-properties',
         {
@@ -66,9 +67,11 @@ module.exports = {
             buildToolsVersion: '35.0.0',
             ndkVersion: '28.0.12674087',
             abiFilters: ['arm64-v8a'],
+            // 16 KB: libs sin comprimir para que AGP 8.5.1+ las alinee en ZIP (requisito Play desde nov 2025)
+            useLegacyPackaging: false,
             packagingOptions: {
               jniLibs: {
-                useLegacyPackaging: false  // necesario para 16 kB (libs sin comprimir, alineables)
+                useLegacyPackaging: false
               }
             },
             // 16 kB: con SDK 53+ las libs nativas vienen alineadas; en SDK 52 Play sigue avisando
@@ -81,7 +84,8 @@ module.exports = {
             }
           }
         }
-      ]
+      ],
+      './plugins/android-16kb.js'
     ],
     scheme: 'orarconjesus',
     experiments: {
