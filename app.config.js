@@ -33,7 +33,7 @@ module.exports = {
     },
     android: {
       package: 'com.orarconjesus.app',
-      versionCode: 15,
+      versionCode: 16,
       adaptiveIcon: {
         foregroundImage: 'assets/images/android/mipmap-xxxhdpi/ic_launcher.png',
         backgroundColor: '#ffffff'
@@ -44,7 +44,8 @@ module.exports = {
       enableHermes: true,
       jsEngine: "hermes",
       targetSdkVersion: 35,
-      // Soporte para 16 kB memory page sizes
+      // 16 kB: la build está bien (NDK 28, useLegacyPackaging false). Para cumplir con Play Store
+      // hace falta Expo SDK 53+ (las .so de SDK 52 no están alineadas a 16 kB). Ver: expo/expo#37440
       supportsRtl: true,
       allowBackup: false
     },
@@ -55,6 +56,7 @@ module.exports = {
     plugins: [
       'expo-font',
       'expo-router',
+      'expo-web-browser',
       [
         'expo-build-properties',
         {
@@ -66,10 +68,10 @@ module.exports = {
             abiFilters: ['arm64-v8a'],
             packagingOptions: {
               jniLibs: {
-                useLegacyPackaging: false
+                useLegacyPackaging: false  // necesario para 16 kB (libs sin comprimir, alineables)
               }
             },
-            // Configuración para soporte 16 kB memory page sizes
+            // 16 kB: con SDK 53+ las libs nativas vienen alineadas; en SDK 52 Play sigue avisando
             enableProguardInReleaseBuilds: true,
             enableShrinkResourcesInReleaseBuilds: true,
             proguardFiles: ['proguard-rules.pro'],
