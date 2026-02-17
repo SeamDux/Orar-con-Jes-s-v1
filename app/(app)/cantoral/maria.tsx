@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { Stack } from 'expo-router';
@@ -19,7 +19,7 @@ export default function CantosMarianoScreen() {
       <ScrollView style={styles.container}>
         <View style={styles.content}>
           <View style={styles.headerCard}>
-            <Text style={styles.title}>Cantos Virgen María</Text>
+            <Text style={styles.title}>Cantos a la Virgen María</Text>
           </View>
 
           <View style={styles.songCard}>
@@ -43,6 +43,12 @@ export default function CantosMarianoScreen() {
               Guíala por la senda de la virtud y honor (bis).
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=fzIJrsQFyUs')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>2. Junto a ti, María</Text>
@@ -62,6 +68,12 @@ export default function CantosMarianoScreen() {
               <Text style={styles.italic}>Madre, madre...</Text>
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=png4nus09vQ')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>3. María mírame</Text>
@@ -110,6 +122,12 @@ export default function CantosMarianoScreen() {
               Descansar
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=JAjYcUndLCM')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>4. María de la Alianza</Text>
@@ -151,6 +169,12 @@ export default function CantosMarianoScreen() {
               Palabra hecha flor</Text>
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=jkpEv3cu1Lg')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
         </View>
       </ScrollView>
     </>

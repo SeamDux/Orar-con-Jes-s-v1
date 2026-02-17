@@ -43,6 +43,12 @@ export default function CantosComunionScreen() {
               que lleva hasta la orilla al hijo de su amor.
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=rPm-DLWwUlA')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
 
           <View style={styles.songCard}>
             <Text style={styles.songTitle}>2. Dueño de mi vida</Text>
@@ -151,6 +157,12 @@ export default function CantosComunionScreen() {
               mi fuerza en la oración
             </Text>
           </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => Linking.openURL('https://www.youtube.com/watch?v=y-P08xxPCXY')}
+                    >
+            <Text style={styles.buttonText}>Escuchar</Text>
+            </TouchableOpacity>
         </View>
       </ScrollView>
     </>

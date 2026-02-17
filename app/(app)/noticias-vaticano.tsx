@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, ScrollView, Image, ActivityIndicator, RefreshCo
 import { Stack } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
-import * as rssParser from 'react-native-rss-parser';
 
 interface Noticia {
   title: string;
@@ -12,6 +11,47 @@ interface Noticia {
   description: string;
   content: string;
   image?: string;
+}
+
+// rss2json obtiene el RSS desde su servidor y devuelve JSON; funciona igual en web y en app nativa.
+const RSS2JSON_API_KEY = 'o1jvmwzwvwk9gjdzrwyvqolxqwsne3rgyrcthbph';
+
+// Fuente: https://www.vaticannews.va/es.html (menú "Rss" en pie de página).
+// Misma estructura que el feed que sí funciona: content/vaticannews/es/evangelio-de-hoy.rss.xml
+const RSS_URLS_TO_TRY = [
+  'https://www.vaticannews.va/content/vaticannews/es.rss.xml',
+  'https://www.vaticannews.va/content/vaticannews/es/noticias.rss.xml',
+  'https://www.vaticannews.va/content/vaticannews/es/index.rss.xml',
+  'https://www.vaticannews.va/content/vaticannews/es/rss.xml',
+  'https://www.vaticannews.va/es/rss.xml',
+  'https://www.vaticannews.va/es.rss.xml',
+  'https://www.vaticannews.va/es/feed',
+  'https://www.aciprensa.com/rss/noticias.xml',
+];
+
+function extractImageFromContent(html: string, baseUrl = 'https://www.vaticannews.va'): string | undefined {
+  if (!html) return undefined;
+  const imgMatch = html.match(/<img[^>]+src=["']?([^"' >]+)["']?[^>]*>/i);
+  if (imgMatch && imgMatch[1]) {
+    const src = imgMatch[1];
+    return src.startsWith('http') ? src : `${baseUrl}${src.startsWith('/') ? '' : '/'}${src}`;
+  }
+  return undefined;
+}
+
+function mapRssItemToNoticia(item: any, imageBaseUrl = 'https://www.vaticannews.va'): Noticia {
+  const content = item.content || item.description || '';
+  const description = (item.description || '').replace(/<[^>]*>/g, '').trim();
+  let image = item.thumbnail || item.enclosure?.link;
+  if (!image) image = extractImageFromContent(content, imageBaseUrl) || extractImageFromContent(item.description || '', imageBaseUrl);
+  return {
+    title: item.title || '',
+    link: item.link || '',
+    pubDate: item.pubDate || '',
+    description,
+    content: content.replace(/<[^>]*>/g, '').trim(),
+    image,
+  };
 }
 
 export default function NoticiasVaticanoScreen() {
@@ -23,44 +63,39 @@ export default function NoticiasVaticanoScreen() {
   const fetchNoticias = async () => {
     setLoading(true);
     setError(null);
-    try {
-      const corsProxy = 'https://corsproxy.io/?';
-      const rssUrl = `${corsProxy}https://www.vaticannews.va/es.rss.xml`;
-      const response = await fetch(rssUrl, {
-        headers: {
-          'Accept': 'application/rss+xml, application/xml, text/xml',
-          'User-Agent': 'OrarConJesusApp/1.0',
-        },
-      });
-      if (!response.ok) throw new Error('No se pudo obtener el feed RSS');
-      const text = await response.text();
-      const feed = await rssParser.parse(text);
-      const noticiasArray: Noticia[] = feed.items.map(item => {
-        const content = item.content || '';
-        const description = item.description || '';
-        // Extraer imagen del contenido
-        let image;
-        const imgMatch = content.match(/<img[^>]+src=["']?([^"' >]+)["']?[^>]*>/i) || description.match(/<img[^>]+src=["']?([^"' >]+)["']?[^>]*>/i);
-        if (imgMatch && imgMatch[1]) {
-          image = imgMatch[1].startsWith('http') ? imgMatch[1] : `https://www.vaticannews.va${imgMatch[1]}`;
+    let lastError: string | null = null;
+    const tryWithKey = true;
+    for (const rssUrl of RSS_URLS_TO_TRY) {
+      for (const useKey of [tryWithKey, false]) {
+        try {
+          const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}${useKey ? `&api_key=${RSS2JSON_API_KEY}` : ''}`;
+          const response = await fetch(apiUrl);
+          if (!response.ok) {
+            lastError = `HTTP ${response.status}`;
+            continue;
+          }
+          const data = await response.json();
+          if (data.status !== 'ok' || !data.items || !Array.isArray(data.items) || data.items.length === 0) {
+            lastError = data.message || 'Feed vacío o inválido';
+            continue;
+          }
+          const baseUrl = rssUrl.includes('aciprensa') ? 'https://www.aciprensa.com' : 'https://www.vaticannews.va';
+          const noticiasArray: Noticia[] = data.items.map((item: any) => mapRssItemToNoticia(item, baseUrl));
+          setNoticias(noticiasArray);
+          setError(null);
+          setLoading(false);
+          setRefreshing(false);
+          return;
+        } catch (_) {
+          lastError = 'Error de red o formato';
+          continue;
         }
-        return {
-          title: item.title || '',
-          link: item.links && item.links[0] ? item.links[0].url : '',
-          pubDate: item.published || '',
-          description: description.replace(/<[^>]*>/g, '').trim(),
-          content: content.replace(/<[^>]*>/g, '').trim(),
-          image,
-        };
-      });
-      setNoticias(noticiasArray);
-    } catch (e: any) {
-      setError('No se pudo cargar el feed de noticias del Vaticano.');
-      setNoticias([]);
-    } finally {
-      setLoading(false);
-      setRefreshing(false);
+      }
     }
+    setError('No se pudo cargar el feed de noticias del Vaticano. ' + (lastError ? `(${lastError})` : ''));
+    setNoticias([]);
+    setLoading(false);
+    setRefreshing(false);
   };
 
   useEffect(() => {
