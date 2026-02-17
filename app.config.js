@@ -4,9 +4,8 @@ module.exports = {
       url: "https://u.expo.dev/bf6414f8-8793-416a-a967-8141f890fb15",
       fallbackToCacheTimeout: 0
     },
-    runtimeVersion: {
-      policy: "appVersion"
-    },
+    // En bare workflow hay que fijar la versión; mantenerla igual que version al publicar
+    runtimeVersion: "1.0.2",
     extra: {
       eas: {
         projectId: 'bf6414f8-8793-416a-a967-8141f890fb15'
