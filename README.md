@@ -35,6 +35,23 @@ npm run reset-project
 
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
+## Duplicar esta app
+
+Puedes clonar esta base para crear una nueva app religiosa con otra identidad:
+
+```bash
+npm run duplicate-app -- --target "../NuevaAppReligiosa" --app-name "Nueva App Religiosa" --slug "nuevaappreligiosa" --package "com.tuempresa.nuevaappreligiosa" --scheme "nuevaappreligiosa"
+```
+
+Luego, dentro de la nueva carpeta:
+
+```bash
+npm install
+npx expo prebuild --clean
+npx eas project:init
+npx expo run:android
+```
+
 ## Learn more
 
 To learn more about developing your project with Expo, look at the following resources:
