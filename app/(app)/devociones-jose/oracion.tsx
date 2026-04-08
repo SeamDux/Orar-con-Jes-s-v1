@@ -20,7 +20,7 @@ export default function OracionSanJoseScreen() {
           <Text style={styles.titulo}>Oración a San José</Text>
 
           <Text style={styles.oracion}>
-            San JOSE, mi padre y señor, tú que fuiste guardián fiel del Hijo de Dios y Madre Santísima; la Virgen María, alcánzame del Señor la gracia de un espíritu recto y de un corazón puro y casto para servir siempre mejor a Jesús y María. Amén.
+            San José, mi padre y señor, tú que fuiste guardián fiel del Hijo de Dios y Madre Santísima; la Virgen María, alcánzame del Señor la gracia de un espíritu recto y de un corazón puro y casto para servir siempre mejor a Jesús y María. Amén.
           </Text>
 
           <Text style={styles.subtitulo}>Oración del Papa León XIII</Text>
