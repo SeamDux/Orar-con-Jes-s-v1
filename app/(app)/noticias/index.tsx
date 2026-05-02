@@ -246,7 +246,7 @@ export default function NoticiasScreen() {
       const corsProxy = 'https://corsproxy.io/?';
       const rssUrls = [
         // Feed RSS del Obispado de San Bernardo (primera prioridad)
-        `${corsProxy}https://www.obispadodesanbernardo.cl/feed`,
+        `${corsProxy}https://www.obispadodesanbernardo.cl/category/noticias/feed/`,
         'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.obispadodesanbernardo.cl%2Ffeed',
         // URLs con proxy CORS
         `${corsProxy}https://www.iglesia.cl/noticias/rss.php`,
