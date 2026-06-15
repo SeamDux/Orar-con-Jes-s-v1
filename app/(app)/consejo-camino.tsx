@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, ActivityIndicator, RefreshControl, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, ActivityIndicator, RefreshControl, TouchableOpacity, Linking, Platform } from 'react-native';
 import { Stack } from 'expo-router';
 import Colors from '../../constants/Colors';
 import * as rssParser from 'react-native-rss-parser';
@@ -12,7 +12,65 @@ interface VideoItem {
   thumbnail: string;
 }
 
+interface Rss2JsonItem {
+  title?: string;
+  link?: string;
+  pubDate?: string;
+  guid?: string;
+  thumbnail?: string;
+}
+
 const PLAYLIST_RSS = 'https://www.youtube.com/feeds/videos.xml?playlist_id=PLDFmwHW6wkBrrf050erGsLhFgGHP3r5sT';
+
+function extractVideoId(link: string): string {
+  const match = link.match(/[?&]v=([\w-]+)/);
+  return match?.[1] ?? '';
+}
+
+function mapFeedItem(item: rssParser.RssItem): VideoItem {
+  const link = item.links?.[0]?.url ?? '';
+  const videoId = extractVideoId(link) || (item.id?.replace('yt:video:', '') ?? '');
+  return {
+    id: videoId,
+    title: item.title || '',
+    link,
+    published: item.published || '',
+    thumbnail: videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '',
+  };
+}
+
+function mapRss2JsonItem(item: Rss2JsonItem): VideoItem {
+  const link = item.link ?? '';
+  const videoId = extractVideoId(link) || (item.guid?.replace('yt:video:', '') ?? '');
+  return {
+    id: videoId,
+    title: item.title || '',
+    link,
+    published: item.pubDate || '',
+    thumbnail: item.thumbnail || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : ''),
+  };
+}
+
+async function fetchVideosFromFeed(): Promise<VideoItem[]> {
+  const response = await fetch(PLAYLIST_RSS, {
+    headers: {
+      'Accept': 'application/atom+xml, application/xml, text/xml',
+      'User-Agent': 'OrarConJesusApp/1.0',
+    },
+  });
+  if (!response.ok) throw new Error('No se pudo obtener el feed de la playlist');
+  const feed = await rssParser.parse(await response.text());
+  return (feed.items ?? []).map(mapFeedItem);
+}
+
+async function fetchVideosFromRss2Json(): Promise<VideoItem[]> {
+  const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(PLAYLIST_RSS)}`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('No se pudo obtener el feed de la playlist');
+  const json = await response.json();
+  if (json.status !== 'ok' || !json.items?.length) throw new Error('La playlist no tiene videos');
+  return json.items.map(mapRss2JsonItem);
+}
 
 export default function ConsejoCaminoScreen() {
   const [videos, setVideos] = useState<VideoItem[]>([]);
@@ -24,39 +82,19 @@ export default function ConsejoCaminoScreen() {
     setLoading(true);
     setError(null);
     try {
-      const corsProxy = 'https://corsproxy.io/?';
-      const rssUrl = `${corsProxy}${PLAYLIST_RSS}`;
-      const response = await fetch(rssUrl, {
-        headers: {
-          'Accept': 'application/rss+xml, application/xml, text/xml',
-          'User-Agent': 'OrarConJesusApp/1.0',
-        },
-      });
-      if (!response.ok) throw new Error('No se pudo obtener el feed de la playlist');
-      const text = await response.text();
-      const feed = await rssParser.parse(text);
-      const videosArray: VideoItem[] = feed.items.map(item => {
-        // Extraer el ID del video desde el link
-        let videoId = '';
-        if (item.links && item.links.length > 0) {
-          const url = item.links[0].url;
-          const match = url.match(/v=([\w-]+)/);
-          if (match && match[1]) videoId = match[1];
+      let videosArray: VideoItem[];
+      if (Platform.OS === 'web') {
+        videosArray = await fetchVideosFromRss2Json();
+      } else {
+        try {
+          videosArray = await fetchVideosFromFeed();
+        } catch {
+          videosArray = await fetchVideosFromRss2Json();
         }
-        // Miniatura estándar de YouTube
-        const thumbnail = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
-        return {
-          id: videoId,
-          title: item.title || '',
-          link: item.links && item.links[0] ? item.links[0].url : '',
-          published: item.published || '',
-          thumbnail,
-        };
-      });
-      // Ordenar por fecha descendente
+      }
       videosArray.sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime());
       setVideos(videosArray);
-    } catch (e: any) {
+    } catch {
       setError('No se pudo cargar la lista de videos.');
       setVideos([]);
     } finally {
